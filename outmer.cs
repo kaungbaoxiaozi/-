@@ -98,6 +98,11 @@ namespace Warehouse_Manager
                     if(rows == 1)
                     {
                         MessageBox.Show("修改成功");
+                        outremer();
+                    }
+                    else
+                    {
+                        MessageBox.Show("这条记录真的存在吗？");
                     }
                 }
             }
@@ -154,6 +159,9 @@ namespace Warehouse_Manager
                     if (rows == 1)
                     {
                         MessageBox.Show("删除成功");
+                        outremer();
+                        id.Text = null;
+                        IDD.Text = null;
                     }
                 }
                
