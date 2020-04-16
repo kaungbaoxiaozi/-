@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(outmer));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.snamet = new System.Windows.Forms.ComboBox();
@@ -45,13 +46,18 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.id = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.snamett = new System.Windows.Forms.TextBox();
             this.outtimett = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.deletebut = new System.Windows.Forms.Button();
             this.pnamett = new System.Windows.Forms.TextBox();
             this.numbertt = new System.Windows.Forms.TextBox();
-            this.IDD = new System.Windows.Forms.Label();
+            this.ids = new System.Windows.Forms.Label();
             this.outBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.outTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.outTableAdapter();
             this.outmerdata = new System.Windows.Forms.DataGridView();
@@ -66,12 +72,6 @@
             this.storeTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.storeTableAdapter();
             this.还原ToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).BeginInit();
@@ -114,6 +114,15 @@
             this.tabPage1.Text = "修改出库记录";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 318);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(221, 12);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "*暂不提供更改出库产品功能，开发中...";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -125,7 +134,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(65, 158);
+            this.button1.Location = new System.Drawing.Point(65, 152);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 7;
@@ -140,7 +149,7 @@
             this.snamet.DataSource = this.storeBindingSource;
             this.snamet.DisplayMember = "name";
             this.snamet.FormattingEnabled = true;
-            this.snamet.Location = new System.Drawing.Point(65, 121);
+            this.snamet.Location = new System.Drawing.Point(65, 115);
             this.snamet.Name = "snamet";
             this.snamet.Size = new System.Drawing.Size(151, 20);
             this.snamet.TabIndex = 6;
@@ -165,7 +174,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 124);
+            this.label3.Location = new System.Drawing.Point(18, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 4;
@@ -201,7 +210,6 @@
             this.pnamet.Name = "pnamet";
             this.pnamet.Size = new System.Drawing.Size(151, 20);
             this.pnamet.TabIndex = 1;
-            this.pnamet.MouseHover += new System.EventHandler(this.pnamet_MouseHover);
             // 
             // productBindingSource
             // 
@@ -213,9 +221,8 @@
             this.id.AutoSize = true;
             this.id.Location = new System.Drawing.Point(137, 16);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(29, 12);
+            this.id.Size = new System.Drawing.Size(0, 12);
             this.id.TabIndex = 0;
-            this.id.Text = "null";
             this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
             // 
             // tabPage2
@@ -231,7 +238,7 @@
             this.tabPage2.Controls.Add(this.deletebut);
             this.tabPage2.Controls.Add(this.pnamett);
             this.tabPage2.Controls.Add(this.numbertt);
-            this.tabPage2.Controls.Add(this.IDD);
+            this.tabPage2.Controls.Add(this.ids);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -240,19 +247,64 @@
             this.tabPage2.Text = "删除出库记录";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(113, 12);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "当前选中记录编号：";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(16, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 12);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "出库时间：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 101);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "商店名：";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "产品名：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "数量：";
+            // 
             // snamett
             // 
-            this.snamett.Enabled = false;
             this.snamett.Location = new System.Drawing.Point(81, 98);
             this.snamett.Name = "snamett";
+            this.snamett.ReadOnly = true;
             this.snamett.Size = new System.Drawing.Size(131, 21);
             this.snamett.TabIndex = 6;
             // 
             // outtimett
             // 
-            this.outtimett.Enabled = false;
             this.outtimett.Location = new System.Drawing.Point(81, 132);
             this.outtimett.Name = "outtimett";
+            this.outtimett.ReadOnly = true;
             this.outtimett.Size = new System.Drawing.Size(131, 21);
             this.outtimett.TabIndex = 5;
             // 
@@ -277,29 +329,28 @@
             // 
             // pnamett
             // 
-            this.pnamett.Enabled = false;
             this.pnamett.Location = new System.Drawing.Point(81, 66);
             this.pnamett.Name = "pnamett";
+            this.pnamett.ReadOnly = true;
             this.pnamett.Size = new System.Drawing.Size(131, 21);
             this.pnamett.TabIndex = 2;
             // 
             // numbertt
             // 
-            this.numbertt.Enabled = false;
             this.numbertt.Location = new System.Drawing.Point(81, 34);
             this.numbertt.Name = "numbertt";
+            this.numbertt.ReadOnly = true;
             this.numbertt.Size = new System.Drawing.Size(131, 21);
             this.numbertt.TabIndex = 1;
             // 
-            // IDD
+            // ids
             // 
-            this.IDD.AutoSize = true;
-            this.IDD.Location = new System.Drawing.Point(135, 15);
-            this.IDD.Name = "IDD";
-            this.IDD.Size = new System.Drawing.Size(29, 12);
-            this.IDD.TabIndex = 0;
-            this.IDD.Text = "null";
-            this.IDD.TextChanged += new System.EventHandler(this.IDD_TextChanged);
+            this.ids.AutoSize = true;
+            this.ids.Location = new System.Drawing.Point(135, 15);
+            this.ids.Name = "ids";
+            this.ids.Size = new System.Drawing.Size(0, 12);
+            this.ids.TabIndex = 0;
+            this.ids.TextChanged += new System.EventHandler(this.IDD_TextChanged);
             // 
             // outBindingSource
             // 
@@ -401,7 +452,6 @@
             this.还原ToolStrip.Size = new System.Drawing.Size(743, 22);
             this.还原ToolStrip.TabIndex = 6;
             this.还原ToolStrip.Text = "还原ToolStrip";
-            this.还原ToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.还原ToolStrip_ItemClicked);
             // 
             // toolStripButton1
             // 
@@ -413,60 +463,6 @@
             this.toolStripButton1.Text = "刷新";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "数量：";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "产品名：";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 101);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 12);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "商店名：";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 135);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "出库时间：";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(113, 12);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "当前选中记录编号：";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 318);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(221, 12);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "*暂不提供更改出库产品功能，开发中...";
-            // 
             // outmer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -476,8 +472,9 @@
             this.Controls.Add(this.还原ToolStrip);
             this.Controls.Add(this.tabControl1);
             this.Name = "outmer";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "outmer";
+            this.Text = "管理出库记录";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.outmer_FormClosed);
             this.Load += new System.EventHandler(this.outmer_Load);
             this.tabControl1.ResumeLayout(false);
@@ -516,7 +513,7 @@
         private System.Windows.Forms.BindingSource storeBindingSource;
         private WMSDataSetTableAdapters.storeTableAdapter storeTableAdapter;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label IDD;
+        private System.Windows.Forms.Label ids;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button deletebut;
         private System.Windows.Forms.TextBox pnamett;

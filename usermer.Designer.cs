@@ -1,6 +1,6 @@
 ﻿namespace Warehouse_Manager
 {
-    partial class cuser
+    partial class usermer
     {
         /// <summary>
         /// Required designer variable.
@@ -138,7 +138,6 @@
             this.upid.Name = "upid";
             this.upid.Size = new System.Drawing.Size(120, 21);
             this.upid.TabIndex = 4;
-            this.upid.TextAlignChanged += new System.EventHandler(this.upid_TextAlignChanged);
             // 
             // label1
             // 

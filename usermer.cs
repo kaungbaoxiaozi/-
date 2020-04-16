@@ -11,17 +11,15 @@ using System.Windows.Forms;
 
 namespace Warehouse_Manager
 {
-    public partial class cuser : Form
+    public partial class usermer : Form
     {
-        public cuser()
+        public usermer()
         {
             InitializeComponent();
         }
 
         private void listviewtest_Load(object sender, EventArgs e)
         {
-            //// TODO: 这行代码将数据加载到表“wMSDataSet.store”中。您可以根据需要移动或删除它。
-            //this.storeTableAdapter.Fill(this.wMSDataSet.store);
             try
             {
                 string sqlc = string.Format("SELECT * FROM [USER]");
@@ -50,8 +48,6 @@ namespace Warehouse_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //ListViewItem lvs = new ListViewItem();
-            //lvs.SubItems.Clear();
             try
             {
                 userlist.Items.Clear();
@@ -84,7 +80,7 @@ namespace Warehouse_Manager
 
             string sqlup = string.Format("update [user] set [power] = '{0}' where id = '{1}'", uppower.Text,upid.Text);
             SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sqlup);
-                MessageBox.Show("修改成功");
+            MessageBox.Show("修改成功");
           
         }
 
@@ -92,11 +88,6 @@ namespace Warehouse_Manager
         {
             string sqlde = string.Format("delete from [user] where [id] = '{0}'", deid.Text);
             SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sqlde);
-        }
-
-        private void upid_TextAlignChanged(object sender, EventArgs e)
-        {
-            //label3.Visible = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -119,10 +110,6 @@ namespace Warehouse_Manager
                     cxtj = "name";
                     break;
             }
-
-            //string sqlca = string.Format("select * from [user] where '{0}' = '{1}' ",cxtj,cx.Text);
-            //SqlDataReader sqlreader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
-            
             //*********************************************************************************************
             try
             {

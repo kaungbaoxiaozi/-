@@ -10,15 +10,13 @@ using System.Windows.Forms;
 
 namespace Warehouse_Manager
 {
-    public partial class addout : Form
+    public partial class outadd : Form
     {
 
-        public addout()
+        public outadd()
         {
             InitializeComponent();
         }
-
-
 
         private void addout_Load(object sender, EventArgs e)
         {
@@ -101,8 +99,6 @@ namespace Warehouse_Manager
             {
                 MessageBox.Show("库存不足！");
             }
-
-           
         }
 
         private void addout_FormClosed(object sender, FormClosedEventArgs e)

@@ -30,28 +30,18 @@ namespace Warehouse_Manager
 
         }
 
-        private void 还原ToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_Click(object sender, EventArgs e)
-        {
-            //int index = dg_Product.CurrentRow.Index;    //取得选中行的索引
-            //txt_ProductId.Text = dg_Product.Rows[index].Cells["Id"].Value;   //获取单元格列名为‘Id’的值
-
-            ////txt_ProductId.Text为最终获取的选中行的ID值
-
-
-        }
-
         private void dataGridView1_Click_1(object sender, EventArgs e)
         {
-            //int index = dataGridView1.CurrentRow.Index;
-            //id.Text = dataGridView1.Rows[index].Cells["number"].Value.ToString();
-            int index = outmerdata.CurrentRow.Index;
-            id.Text = outmerdata.Rows[index].Cells[0].Value.ToString();
-            IDD.Text = outmerdata.Rows[index].Cells[0].Value.ToString();
+            try
+            {
+                int index = outmerdata.CurrentRow.Index;
+                id.Text = outmerdata.Rows[index].Cells[0].Value.ToString();
+                ids.Text = outmerdata.Rows[index].Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void id_TextChanged(object sender, EventArgs e)
@@ -70,54 +60,55 @@ namespace Warehouse_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //通过产品名称，查询产品id用于后面的库存是否充足判断
-            string sqlca = string.Format("select [id] from [product] where [name] = '{0}' ", pnamet.Text);
-            int pid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlca));
-            //获取出库产品的剩余库存
-            string sqlstock = string.Format("select [stock] from [product] where [id] = '{0}'", pid);
-            int systock = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlstock));
-            if (Convert.ToInt32(numbert.Text) > systock )
+            if (string.IsNullOrWhiteSpace(id.Text))
             {
-                MessageBox.Show("库存不足！");
+                MessageBox.Show("你还没有选择任何记录");
             }
             else
             {
-                string snamett = snamet.Text;
-                string sqlsid = string.Format("select [id] from [store] where [name] = '{0}'", snamett);
-                int sid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlsid));
-                string time = DateTime.Now.ToLongDateString().ToString();
-                string sql = string.Format("update [out] set [number] = '{0}',[pname] = '{1}',[sname] = '{2}',[outtime] = '{3}',[sid] = '{4}' where [id] = '{5}'", numbert.Text, pnamet.Text, snamet.Text, time, sid, id.Text);
-                int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
-                if (row == 1)
+                //通过产品名称，查询产品id用于后面的库存是否充足判断
+                string sqlca = string.Format("select [id] from [product] where [name] = '{0}' ", pnamet.Text);
+                int pid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlca));
+                //获取出库产品的剩余库存
+                string sqlstock = string.Format("select [stock] from [product] where [id] = '{0}'", pid);
+                int systock = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlstock));
+                if (Convert.ToInt32(numbert.Text) > systock)
                 {
-                    int newnumber =Convert.ToInt32( numbert.Text);
-                    int kucun = newnumber - number;
-                    systock = systock - kucun;
-                    string sqlup = string.Format("update [product] set [stock] = '{0}' where [id] = '{1}'", systock, pid);
-                    int rows =Convert.ToInt32( SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlup));
-                    if(rows == 1)
+                    MessageBox.Show("库存不足！");
+                }
+                else
+                {
+                    string snamett = snamet.Text;
+                    string sqlsid = string.Format("select [id] from [store] where [name] = '{0}'", snamett);
+                    int sid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlsid));
+                    string time = DateTime.Now.ToLongDateString().ToString();
+                    string sql = string.Format("update [out] set [number] = '{0}',[pname] = '{1}',[sname] = '{2}',[outtime] = '{3}',[sid] = '{4}' where [id] = '{5}'", numbert.Text, pnamet.Text, snamet.Text, time, sid, id.Text);
+                    int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
+                    if (row == 1)
                     {
-                        MessageBox.Show("修改成功");
-                        outremer();
-                    }
-                    else
-                    {
-                        MessageBox.Show("这条记录真的存在吗？");
+                        int newnumber = Convert.ToInt32(numbert.Text);
+                        int kucun = newnumber - number;
+                        systock = systock - kucun;
+                        string sqlup = string.Format("update [product] set [stock] = '{0}' where [id] = '{1}'", systock, pid);
+                        int rows = Convert.ToInt32(SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlup));
+                        if (rows == 1)
+                        {
+                            MessageBox.Show("修改成功");
+                            outremer();
+                        }
+                        else
+                        {
+                            MessageBox.Show("这条记录真的存在吗？");
+                        }
                     }
                 }
-            }
-            
+            } 
         }
 
         private void outmer_FormClosed(object sender, FormClosedEventArgs e)
         {
             main mai = (main)this.Owner;
             mai.prore();
-        }
-
-        private void pnamet_MouseHover(object sender, EventArgs e)
-        {
-            
         }
 
         private void IDD_TextChanged(object sender, EventArgs e)
@@ -143,28 +134,35 @@ namespace Warehouse_Manager
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void deletebut_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("是否删除该记录？","在？",MessageBoxButtons.OKCancel)== DialogResult.OK)
+            if (string.IsNullOrWhiteSpace(ids.Text))
             {
-                int pid = Myhelper.Getpidbyname(pnamett.Text);
-                int systock = Myhelper.Getstockbyid(pid);
-                int denumber = Convert.ToInt32(numbertt.Text);
-                int newstock = systock + denumber;
-                int row = Myhelper.Upstock_delete(newstock,pid);
-                if (row == 1)//row=1说明库存已经更新
+                MessageBox.Show("你还没有选择任何记录");
+            }
+            else
+            {
+                if (MessageBox.Show("是否删除该记录？", "在？", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    string sql = string.Format("delete from [out] where [id] = '{0}'", IDD.Text);
-                    int rows = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
-                    if (rows == 1)
+                    int pid = Myhelper.Getpidbyname(pnamett.Text);
+                    int systock = Myhelper.Getstockbyid(pid);
+                    int denumber = Convert.ToInt32(numbertt.Text);
+                    int newstock = systock + denumber;
+                    int row = Myhelper.Upstock_delete(newstock, pid);
+                    if (row == 1)//row=1说明库存已经更新
                     {
-                        MessageBox.Show("删除成功");
-                        outremer();
-                        id.Text = null;
-                        IDD.Text = null;
+                        string sql = string.Format("delete from [out] where [id] = '{0}'", ids.Text);
+                        int rows = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
+                        if (rows == 1)
+                        {
+                            MessageBox.Show("删除成功");
+                            outremer();
+                            id.Text = null;
+                            ids.Text = null;
+                        }
                     }
                 }
-               
             }
         }
 

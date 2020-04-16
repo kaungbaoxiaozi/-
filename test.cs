@@ -31,13 +31,6 @@ namespace Warehouse_Manager
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             MessageBox.Show("选中行"+(e.RowIndex+1));
-            //MessageBox.Show()
-        }
-
-        private void 刷新ToolStripButton_Click(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
@@ -50,7 +43,6 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private void refresh()
@@ -72,7 +64,7 @@ namespace Warehouse_Manager
 
         private void 出库管理ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addout add = new addout();
+            outadd add = new outadd();
             add.Show();
         }
 
@@ -86,7 +78,6 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
@@ -99,7 +90,6 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private void storeToolStripButton_Click(object sender, EventArgs e)
@@ -112,7 +102,6 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
     }
 }

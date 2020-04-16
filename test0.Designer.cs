@@ -1,6 +1,6 @@
 ﻿namespace Warehouse_Manager
 {
-    partial class patest
+    partial class test0
     {
         /// <summary>
         /// Required designer variable.

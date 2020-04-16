@@ -36,15 +36,7 @@ namespace Warehouse_Manager
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //mciSendString("set wave bitpersample 8", "", 0, 0);
-
-            //mciSendString("set wave samplespersec 20000", "", 0, 0);
-            //mciSendString("set wave channels 2", "", 0, 0);
-            //mciSendString("set wave format tag pcm", "", 0, 0);
-            //mciSendString("open new type WAVEAudio alias movie", "", 0, 0);
-
-            //mciSendString("record movie", "", 0, 0);
-            
+            label1.Text = null;
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -59,6 +51,18 @@ namespace Warehouse_Manager
             int ai = Convert.ToInt32(a.Text);
             int bi = Convert.ToInt32(b.Text);
             c.Text = (ai - bi).ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (label1.Text == null)
+            {
+                MessageBox.Show("空");
+            }
+            else
+            {
+                MessageBox.Show("非空");
+            }
         }
     }
 }

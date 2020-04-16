@@ -1,6 +1,6 @@
 ﻿namespace Warehouse_Manager
 {
-    partial class addout
+    partial class outadd
     {
         /// <summary>
         /// Required designer variable.

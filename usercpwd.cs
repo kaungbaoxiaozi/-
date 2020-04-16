@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Warehouse_Manager
 {
-    public partial class cpwd : Form
+    public partial class usercpwd : Form
     {
-        public cpwd()
+        public usercpwd()
         {
             InitializeComponent();
         }
@@ -30,10 +30,6 @@ namespace Warehouse_Manager
                 }
                 else
                 {
-                    //使用dataset更新数据库
-                    //string sqlup = string.Format("update qq_user set userpwd ='{0}' where userid ='{1}'", npwdt, Users.userid);
-                    //SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlup);
-                    //MessageBox.Show("密码修改成功，请谨记新密码");
                     try
                     {
                         string sqlup = string.Format("update [user] set [password] = '{0}' where id = '{1}'", npwdt, user.uid);

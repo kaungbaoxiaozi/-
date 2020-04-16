@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Warehouse_Manager
 {
-    public partial class about : Form
+    public partial class log : Form
     {
-        public about()
+        public log()
         {
             InitializeComponent();
         }
@@ -27,9 +27,9 @@ namespace Warehouse_Manager
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
             if (reader.HasRows)
             {
-                log.Text = "今日日志已提交,请勿重复提交日志！\n如需修改请移步➡";
+                log1.Text = "今日日志已提交,请勿重复提交日志！\n如需修改请移步➡";
                 //log.Enabled = false;
-                log.Enabled = false;
+                log1.Enabled = false;
                 send.Enabled = false;
                 clears.Enabled = false;
             }
@@ -38,7 +38,7 @@ namespace Warehouse_Manager
         private void button1_Click(object sender, EventArgs e)
         {
             string nowtime = DateTime.Now.ToLongDateString().ToString();
-            if (string.IsNullOrWhiteSpace(log.Text))
+            if (string.IsNullOrWhiteSpace(log1.Text))
             {
                 MessageBox.Show("你没写日志你提交个der的日志！");
             }
@@ -49,12 +49,10 @@ namespace Warehouse_Manager
                 if (reader.HasRows)
                 {
                     MessageBox.Show("你已经写过日志了,若需要修改改请移步➡");
-                    //log.Text = "请勿重复提交日志！";
-                    //log.Enabled = false;
                 }
                 else
                 {
-                    string logt = log.Text;
+                    string logt = log1.Text;
                     string sqlin = string.Format("insert into [log] (time,logt) values ('{0}','{1}')", nowtime, logt);
                     int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlin);
                     if (row == 1)
@@ -84,7 +82,7 @@ namespace Warehouse_Manager
 
         private void clear(object sender, EventArgs e)
         {
-            log.Clear();
+            log1.Clear();
         }
 
         private void change_Click(object sender, EventArgs e)
@@ -112,31 +110,10 @@ namespace Warehouse_Manager
             DialogResult result = inlogfont.ShowDialog();
             if (result == DialogResult.OK)
             {
-                log.Font = inlogfont.Font;
+                log1.Font = inlogfont.Font;
             }
         }
 
-        private void inlogfont_Apply(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void log2font_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void log2_MouseDown(object sender, MouseEventArgs e)
-        {
-            //string test;
-            //weizhi.Text = log2.SelectionStart.ToString();
-            ////MessageBox.Show(test);
-        }
-        /// <summary>自定义方法 -- 
-        ///  获取文本中(行和列)--光标--坐标位置的调用方法
-        /// </summary>
-        /// <param></param>
-        /// <returns></returns>
         private void getfont()
         {
             string sql = string.Format("select [fname],[fsize],[fstyle] from [setting] where [id] = '{0}'",user.uid);
@@ -148,21 +125,10 @@ namespace Warehouse_Manager
                 float fsizef = float.Parse(fsize);
                 string fontstyle = reader["fstyle"].ToString(); 
                 FontStyle fstyle = (FontStyle)Enum.Parse(typeof(FontStyle), fontstyle, false);
-
                 Font myfont = new Font(fname,fsizef,fstyle);
-                log.Font = myfont;
+                log1.Font = myfont;
                 log2.Font = myfont;
             }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)//每秒获取一次时间
-        {
-            
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)//根据用户设置每隔一段时间自动保存日志
-        {
-
         }
 
         private void font_Click(object sender, EventArgs e)
@@ -194,9 +160,8 @@ namespace Warehouse_Manager
                         MessageBox.Show("设置成功");
                     }
                 }
-                
             }
-            MessageBox.Show(log.Font.ToString());
+            MessageBox.Show(log1.Font.ToString());
         }
     }
 }

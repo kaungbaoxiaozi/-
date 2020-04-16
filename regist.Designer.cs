@@ -125,7 +125,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注册";
-            this.Load += new System.EventHandler(this.regist_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

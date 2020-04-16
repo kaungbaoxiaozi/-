@@ -1,6 +1,6 @@
 ﻿namespace Warehouse_Manager
 {
-    partial class cpwd
+    partial class usercpwd
     {
         /// <summary>
         /// Required designer variable.

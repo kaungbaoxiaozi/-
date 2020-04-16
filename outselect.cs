@@ -30,22 +30,8 @@ namespace Warehouse_Manager
 
         }
 
-        private void bynameToolStripButton_Click(object sender, EventArgs e)
-        {
-      
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    this.outTableAdapter.byname(this.wMSDataSet._out, nameToolStripTextBox.Text);
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    System.Windows.Forms.MessageBox.Show(ex.Message);
-            //}
             try
             {
                 this.outTableAdapter.byname(this.wMSDataSet._out, snamecom.Text);
@@ -67,17 +53,6 @@ namespace Warehouse_Manager
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void bytimeToolStripButton_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void bynumberToolStripButton_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -103,12 +78,6 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void bysname_pnameToolStripButton_Click(object sender, EventArgs e)
-        {
-
 
         }
 

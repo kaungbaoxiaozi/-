@@ -258,19 +258,21 @@
             // 录入ToolStripMenuItem
             // 
             this.录入ToolStripMenuItem.Name = "录入ToolStripMenuItem";
-            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.录入ToolStripMenuItem.Text = "录入终端信息";
+            this.录入ToolStripMenuItem.Click += new System.EventHandler(this.录入ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // 更新终端信息ToolStripMenuItem
             // 
             this.更新终端信息ToolStripMenuItem.Name = "更新终端信息ToolStripMenuItem";
-            this.更新终端信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.更新终端信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.更新终端信息ToolStripMenuItem.Text = "维护终端信息";
+            this.更新终端信息ToolStripMenuItem.Click += new System.EventHandler(this.更新终端信息ToolStripMenuItem_Click);
             // 
             // 入库管理ToolStripMenuItem
             // 
@@ -344,7 +346,6 @@
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
             this.关于ToolStripMenuItem.Text = "关于(&G)";
-            this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
             // 作者说明ToolStripMenuItem
             // 
@@ -655,7 +656,6 @@
             this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
             this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.刷新ToolStripMenuItem.Text = "刷新";
-            this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click_1);
             // 
             // storepa
             // 
@@ -684,6 +684,7 @@
             this.storedata.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storedata.Location = new System.Drawing.Point(0, 0);
             this.storedata.Name = "storedata";
+            this.storedata.ReadOnly = true;
             this.storedata.RowTemplate.Height = 23;
             this.storedata.Size = new System.Drawing.Size(662, 379);
             this.storedata.TabIndex = 0;
@@ -694,30 +695,39 @@
             this.idDataGridViewTextBoxColumn3.HeaderText = "终端编号";
             this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
             this.idDataGridViewTextBoxColumn3.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn3.Width = 90;
             // 
             // nameDataGridViewTextBoxColumn1
             // 
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn1.HeaderText = "终端名称";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn1.Width = 90;
             // 
             // phoneDataGridViewTextBoxColumn
             // 
             this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
             this.phoneDataGridViewTextBoxColumn.HeaderText = "电话";
             this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.phoneDataGridViewTextBoxColumn.Width = 90;
             // 
             // addressDataGridViewTextBoxColumn
             // 
             this.addressDataGridViewTextBoxColumn.DataPropertyName = "address";
             this.addressDataGridViewTextBoxColumn.HeaderText = "地址";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressDataGridViewTextBoxColumn.Width = 180;
             // 
             // noteDataGridViewTextBoxColumn1
             // 
             this.noteDataGridViewTextBoxColumn1.DataPropertyName = "note";
             this.noteDataGridViewTextBoxColumn1.HeaderText = "备注";
             this.noteDataGridViewTextBoxColumn1.Name = "noteDataGridViewTextBoxColumn1";
+            this.noteDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.noteDataGridViewTextBoxColumn1.Width = 180;
             // 
             // storeBindingSource1
             // 
@@ -935,11 +945,6 @@
         private System.Windows.Forms.DataGridView outdata;
         private System.Windows.Forms.BindingSource outBindingSource2;
         private System.Windows.Forms.DataGridView storedata;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource storeBindingSource1;
         private System.Windows.Forms.ToolStripMenuItem 供应商管理ToolStripMenuItem;
         private System.Windows.Forms.Panel sppa;
@@ -978,5 +983,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn1;
     }
 }

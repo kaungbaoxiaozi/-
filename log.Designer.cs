@@ -1,6 +1,6 @@
 ﻿namespace Warehouse_Manager
 {
-    partial class about
+    partial class log
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.log = new System.Windows.Forms.RichTextBox();
+            this.log1 = new System.Windows.Forms.RichTextBox();
             this.send = new System.Windows.Forms.Button();
             this.log2 = new System.Windows.Forms.RichTextBox();
             this.select = new System.Windows.Forms.Button();
@@ -41,6 +41,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.change = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.font = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.m5 = new System.Windows.Forms.RadioButton();
             this.m3 = new System.Windows.Forms.RadioButton();
@@ -52,8 +54,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.font = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.inlog.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -78,15 +78,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "输入日志文本";
             // 
-            // log
+            // log1
             // 
-            this.log.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.log.Location = new System.Drawing.Point(9, 22);
-            this.log.Name = "log";
-            this.log.Size = new System.Drawing.Size(571, 218);
-            this.log.TabIndex = 3;
-            this.log.Text = "";
-            this.log.MouseDown += new System.Windows.Forms.MouseEventHandler(this.log2_MouseDown);
+            this.log1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.log1.Location = new System.Drawing.Point(9, 22);
+            this.log1.Name = "log1";
+            this.log1.Size = new System.Drawing.Size(571, 218);
+            this.log1.TabIndex = 3;
+            this.log1.Text = "";
             // 
             // send
             // 
@@ -131,7 +130,7 @@
             // inlog
             // 
             this.inlog.Controls.Add(this.clears);
-            this.inlog.Controls.Add(this.log);
+            this.inlog.Controls.Add(this.log1);
             this.inlog.Controls.Add(this.label1);
             this.inlog.Controls.Add(this.send);
             this.inlog.Location = new System.Drawing.Point(4, 22);
@@ -193,6 +192,25 @@
             this.tabPage1.Text = "设置";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 12);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "选择你的字体：";
+            // 
+            // font
+            // 
+            this.font.Location = new System.Drawing.Point(8, 94);
+            this.font.Name = "font";
+            this.font.Size = new System.Drawing.Size(75, 23);
+            this.font.TabIndex = 5;
+            this.font.Text = "字体";
+            this.font.UseVisualStyleBackColor = true;
+            this.font.Click += new System.EventHandler(this.font_Click);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -251,7 +269,6 @@
             this.inlogfont.ShowColor = true;
             this.inlogfont.ShowEffects = false;
             this.inlogfont.ShowHelp = true;
-            this.inlogfont.Apply += new System.EventHandler(this.inlogfont_Apply);
             // 
             // statusStrip1
             // 
@@ -282,31 +299,10 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timer2
             // 
             this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
-            // 
-            // font
-            // 
-            this.font.Location = new System.Drawing.Point(8, 94);
-            this.font.Name = "font";
-            this.font.Size = new System.Drawing.Size(75, 23);
-            this.font.TabIndex = 5;
-            this.font.Text = "字体";
-            this.font.UseVisualStyleBackColor = true;
-            this.font.Click += new System.EventHandler(this.font_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 12);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "选择你的字体：";
             // 
             // about
             // 
@@ -339,7 +335,7 @@
         #endregion
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox log;
+        private System.Windows.Forms.RichTextBox log1;
         private System.Windows.Forms.Button send;
         private System.Windows.Forms.RichTextBox log2;
         private System.Windows.Forms.Button select;

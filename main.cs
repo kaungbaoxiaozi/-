@@ -13,8 +13,6 @@ namespace Warehouse_Manager
 {
     public partial class main : Form
     {
-        //private static login log = null;
-        ////狗制造私有
         public main()
         {
             InitializeComponent();
@@ -61,7 +59,7 @@ namespace Warehouse_Manager
 
         private void 更改密码ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cpwd cpwd = new cpwd();
+            usercpwd cpwd = new usercpwd();
             cpwd.ShowDialog();
         }
 
@@ -71,7 +69,7 @@ namespace Warehouse_Manager
             if (user.power == "S1")
             {
                 //MessageBox.Show("你是谁？","二次确认",MessageBoxButtons.);
-                cuser cuser = new cuser();
+                usermer cuser = new usermer();
                 cuser.ShowDialog();
             }
             else
@@ -172,12 +170,6 @@ namespace Warehouse_Manager
             }
         }
 
-        private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //about about = new about();
-            //about.ShowDialog();
-        }
-
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
             this.Refresh();
@@ -185,7 +177,7 @@ namespace Warehouse_Manager
 
         private void 添加出库记录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addout addout = new addout();
+            outadd addout = new outadd();
             addout.ShowDialog(this);
         }
 
@@ -204,12 +196,11 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private void 开发日志ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            about ab = new about();
+            log ab = new log();
             ab.ShowDialog();
         }
 
@@ -219,7 +210,7 @@ namespace Warehouse_Manager
             info.ShowDialog();
         }
 
-        public void outre ()
+        public void outre ()//刷新出库
         {
             try
             {
@@ -231,7 +222,7 @@ namespace Warehouse_Manager
             }
         }
 
-        public void prore()
+        public void prore()//刷新库存
         {
             try
             {
@@ -243,9 +234,16 @@ namespace Warehouse_Manager
             }
         }
 
-        private void 刷新ToolStripMenuItem_Click_1(object sender, EventArgs e)
+        public void storere()//刷新商店
         {
-           
+            try
+            {
+                this.storeTableAdapter.store(this.wMSDataSet.store);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
 
         private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -292,7 +290,18 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+        }
 
+        private void 录入ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            storeadd storeadd = new storeadd();
+            storeadd.ShowDialog(this);
+        }
+
+        private void 更新终端信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            storemer storemer = new storemer();
+            storemer.Show(this);
         }
     }
 }

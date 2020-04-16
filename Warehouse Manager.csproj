@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="about.cs">
+    <Compile Include="log.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="about.Designer.cs">
-      <DependentUpon>about.cs</DependentUpon>
+    <Compile Include="log.Designer.cs">
+      <DependentUpon>log.cs</DependentUpon>
     </Compile>
     <Compile Include="info.cs">
       <SubType>Form</SubType>
@@ -58,29 +73,23 @@
     <Compile Include="info.Designer.cs">
       <DependentUpon>info.cs</DependentUpon>
     </Compile>
-    <Compile Include="addout.cs">
+    <Compile Include="outadd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addout.Designer.cs">
-      <DependentUpon>addout.cs</DependentUpon>
+    <Compile Include="outadd.Designer.cs">
+      <DependentUpon>outadd.cs</DependentUpon>
     </Compile>
-    <Compile Include="cpwd.cs">
+    <Compile Include="usercpwd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cpwd.Designer.cs">
-      <DependentUpon>cpwd.cs</DependentUpon>
+    <Compile Include="usercpwd.Designer.cs">
+      <DependentUpon>usercpwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="cuser.cs">
+    <Compile Include="usermer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cuser.Designer.cs">
-      <DependentUpon>cuser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="listbox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="listbox.Designer.cs">
-      <DependentUpon>listbox.cs</DependentUpon>
+    <Compile Include="usermer.Designer.cs">
+      <DependentUpon>usermer.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs">
       <SubType>Form</SubType>
@@ -101,11 +110,23 @@
     <Compile Include="outselect.Designer.cs">
       <DependentUpon>outselect.cs</DependentUpon>
     </Compile>
-    <Compile Include="patest.cs">
+    <Compile Include="storeadd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="patest.Designer.cs">
-      <DependentUpon>patest.cs</DependentUpon>
+    <Compile Include="storeadd.Designer.cs">
+      <DependentUpon>storeadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="storemer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="storemer.Designer.cs">
+      <DependentUpon>storemer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="test0.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test0.Designer.cs">
+      <DependentUpon>test0.cs</DependentUpon>
     </Compile>
     <Compile Include="product.cs">
       <SubType>Form</SubType>
@@ -164,23 +185,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WMSDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="about.resx">
-      <DependentUpon>about.cs</DependentUpon>
+    <EmbeddedResource Include="log.resx">
+      <DependentUpon>log.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="info.resx">
       <DependentUpon>info.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addout.resx">
-      <DependentUpon>addout.cs</DependentUpon>
+    <EmbeddedResource Include="outadd.resx">
+      <DependentUpon>outadd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cpwd.resx">
-      <DependentUpon>cpwd.cs</DependentUpon>
+    <EmbeddedResource Include="usercpwd.resx">
+      <DependentUpon>usercpwd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cuser.resx">
-      <DependentUpon>cuser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="listbox.resx">
-      <DependentUpon>listbox.cs</DependentUpon>
+    <EmbeddedResource Include="usermer.resx">
+      <DependentUpon>usermer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -194,8 +212,14 @@
     <EmbeddedResource Include="outselect.resx">
       <DependentUpon>outselect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="patest.resx">
-      <DependentUpon>patest.cs</DependentUpon>
+    <EmbeddedResource Include="storeadd.resx">
+      <DependentUpon>storeadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="storemer.resx">
+      <DependentUpon>storemer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test0.resx">
+      <DependentUpon>test0.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="product.resx">
       <DependentUpon>product.cs</DependentUpon>
@@ -269,6 +293,18 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

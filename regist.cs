@@ -48,10 +48,5 @@ namespace Warehouse_Manager
                 }
             }
         }
-
-        private void regist_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

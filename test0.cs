@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Warehouse_Manager
 {
-    public partial class patest : Form
+    public partial class test0 : Form
     {
-        public patest()
+        public test0()
         {
             InitializeComponent();
         }
@@ -28,11 +28,6 @@ namespace Warehouse_Manager
             // TODO: 这行代码将数据加载到表“wMSDataSet.user”中。您可以根据需要移动或删除它。
             this.userTableAdapter.Fill(this.wMSDataSet.user);
 
-        }
-
-        private void userToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void userToolStripMenuItem_Click_1(object sender, EventArgs e)
