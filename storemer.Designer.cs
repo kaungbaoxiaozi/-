@@ -41,7 +41,6 @@
             this.upbut = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.uptab = new System.Windows.Forms.TabPage();
-            this.name = new System.Windows.Forms.ComboBox();
             this.note = new System.Windows.Forms.RichTextBox();
             this.address = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,8 +51,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.Label();
             this.detab = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ids = new System.Windows.Forms.Label();
+            this.debut = new System.Windows.Forms.Button();
             this.dename = new System.Windows.Forms.ComboBox();
             this.denote = new System.Windows.Forms.RichTextBox();
             this.deaddress = new System.Windows.Forms.RichTextBox();
@@ -62,7 +60,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dephone = new System.Windows.Forms.TextBox();
-            this.debut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ids = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
@@ -188,18 +188,6 @@
             this.uptab.Text = "修改终端信息";
             this.uptab.UseVisualStyleBackColor = true;
             // 
-            // name
-            // 
-            this.name.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.name.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.name.DataSource = this.storeBindingSource;
-            this.name.DisplayMember = "name";
-            this.name.FormattingEnabled = true;
-            this.name.Location = new System.Drawing.Point(62, 47);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(160, 20);
-            this.name.TabIndex = 20;
-            // 
             // note
             // 
             this.note.Location = new System.Drawing.Point(62, 172);
@@ -298,6 +286,91 @@
             this.detab.Text = "删除终端信息";
             this.detab.UseVisualStyleBackColor = true;
             // 
+            // debut
+            // 
+            this.debut.Location = new System.Drawing.Point(17, 221);
+            this.debut.Name = "debut";
+            this.debut.Size = new System.Drawing.Size(75, 23);
+            this.debut.TabIndex = 29;
+            this.debut.Text = "删除";
+            this.debut.UseVisualStyleBackColor = true;
+            this.debut.Click += new System.EventHandler(this.debut_Click);
+            // 
+            // dename
+            // 
+            this.dename.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.dename.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.dename.DataSource = this.storeBindingSource;
+            this.dename.DisplayMember = "name";
+            this.dename.Enabled = false;
+            this.dename.FormattingEnabled = true;
+            this.dename.Location = new System.Drawing.Point(62, 43);
+            this.dename.Name = "dename";
+            this.dename.Size = new System.Drawing.Size(160, 20);
+            this.dename.TabIndex = 28;
+            // 
+            // denote
+            // 
+            this.denote.Location = new System.Drawing.Point(62, 168);
+            this.denote.Name = "denote";
+            this.denote.ReadOnly = true;
+            this.denote.Size = new System.Drawing.Size(160, 37);
+            this.denote.TabIndex = 27;
+            this.denote.Text = "";
+            // 
+            // deaddress
+            // 
+            this.deaddress.Location = new System.Drawing.Point(62, 116);
+            this.deaddress.Name = "deaddress";
+            this.deaddress.ReadOnly = true;
+            this.deaddress.Size = new System.Drawing.Size(160, 37);
+            this.deaddress.TabIndex = 26;
+            this.deaddress.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 171);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "备注：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 119);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 12);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "地址：";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 83);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "电话：";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(15, 46);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "名称：";
+            // 
+            // dephone
+            // 
+            this.dephone.Location = new System.Drawing.Point(62, 80);
+            this.dephone.Name = "dephone";
+            this.dephone.ReadOnly = true;
+            this.dephone.Size = new System.Drawing.Size(161, 21);
+            this.dephone.TabIndex = 21;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -316,90 +389,12 @@
             this.ids.TabIndex = 11;
             this.ids.TextChanged += new System.EventHandler(this.ids_TextChanged);
             // 
-            // dename
+            // name
             // 
-            this.dename.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.dename.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.dename.DataSource = this.storeBindingSource;
-            this.dename.DisplayMember = "name";
-            this.dename.Enabled = false;
-            this.dename.FormattingEnabled = true;
-            this.dename.Location = new System.Drawing.Point(63, 36);
-            this.dename.Name = "dename";
-            this.dename.Size = new System.Drawing.Size(160, 20);
-            this.dename.TabIndex = 28;
-            // 
-            // denote
-            // 
-            this.denote.Location = new System.Drawing.Point(63, 161);
-            this.denote.Name = "denote";
-            this.denote.ReadOnly = true;
-            this.denote.Size = new System.Drawing.Size(160, 37);
-            this.denote.TabIndex = 27;
-            this.denote.Text = "";
-            // 
-            // deaddress
-            // 
-            this.deaddress.Location = new System.Drawing.Point(63, 109);
-            this.deaddress.Name = "deaddress";
-            this.deaddress.ReadOnly = true;
-            this.deaddress.Size = new System.Drawing.Size(160, 37);
-            this.deaddress.TabIndex = 26;
-            this.deaddress.Text = "";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 164);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "备注：";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 112);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 12);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "地址：";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 76);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "电话：";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 39);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 12);
-            this.label10.TabIndex = 22;
-            this.label10.Text = "名称：";
-            // 
-            // dephone
-            // 
-            this.dephone.Location = new System.Drawing.Point(63, 73);
-            this.dephone.Name = "dephone";
-            this.dephone.ReadOnly = true;
-            this.dephone.Size = new System.Drawing.Size(161, 21);
-            this.dephone.TabIndex = 21;
-            // 
-            // debut
-            // 
-            this.debut.Location = new System.Drawing.Point(18, 214);
-            this.debut.Name = "debut";
-            this.debut.Size = new System.Drawing.Size(75, 23);
-            this.debut.TabIndex = 29;
-            this.debut.Text = "删除";
-            this.debut.UseVisualStyleBackColor = true;
-            this.debut.Click += new System.EventHandler(this.debut_Click);
+            this.name.Location = new System.Drawing.Point(62, 47);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(160, 21);
+            this.name.TabIndex = 20;
             // 
             // storemer
             // 
@@ -412,6 +407,7 @@
             this.MinimizeBox = false;
             this.Name = "storemer";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "维护终端信息";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.storemer_FormClosed);
             this.Load += new System.EventHandler(this.storemer_Load);
@@ -453,7 +449,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox name;
         private System.Windows.Forms.Button debut;
         private System.Windows.Forms.ComboBox dename;
         private System.Windows.Forms.RichTextBox denote;
@@ -463,5 +458,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox dephone;
+        private System.Windows.Forms.TextBox name;
     }
 }

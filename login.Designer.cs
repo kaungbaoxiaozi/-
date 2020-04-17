@@ -38,6 +38,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.exitbut = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.hi = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // loginbut
@@ -91,11 +92,17 @@
             resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
+            // hi
+            // 
+            resources.ApplyResources(this.hi, "hi");
+            this.hi.Name = "hi";
+            // 
             // login
             // 
             this.AcceptButton = this.loginbut;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.hi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exitbut);
             this.Controls.Add(this.linkLabel1);
@@ -111,6 +118,7 @@
             this.Name = "login";
             this.ShowIcon = false;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.login_FormClosed);
+            this.Load += new System.EventHandler(this.login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +135,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button exitbut;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label hi;
     }
 }
 

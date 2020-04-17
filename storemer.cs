@@ -41,15 +41,22 @@ namespace Warehouse_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            if (MessageBox.Show("确定修改吗？","在？",MessageBoxButtons.OKCancel)==DialogResult.OK)
+
+            if (string.IsNullOrWhiteSpace(id.Text))
             {
-                string sql = string.Format("update [store] set [name] = '{0}',[phone] = '{1}',[address] = '{2}',[note] = '{3}' where [id] = '{4}'", name.Text, phone.Text, address.Text, note.Text,id.Text);
-                int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
-                if (row == 1)
+                MessageBox.Show("你没有选中任何行");
+            }
+            else
+            {
+                if (MessageBox.Show("确定修改吗？", "在？", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    MessageBox.Show("修改成功");
-                    this.storemerre();
+                    string sql = string.Format("update [store] set [name] = '{0}',[phone] = '{1}',[address] = '{2}',[note] = '{3}' where [id] = '{4}'", name.Text, phone.Text, address.Text, note.Text, id.Text);
+                    int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
+                    if (row == 1)
+                    {
+                        MessageBox.Show("修改成功");
+                        this.storemerre();
+                    }
                 }
             }
         }
@@ -69,12 +76,59 @@ namespace Warehouse_Manager
 
         private void id_TextChanged(object sender, EventArgs e)
         {
-            string[] info = this.Getinfo(Convert.ToInt32(id.Text));
-            name.Text = info[0];
-            phone.Text = info[1];
-            address.Text = info[2];
-            note.Text = info[3];
+            if (string.IsNullOrWhiteSpace(id.Text))
+            {
+                
+            }
+            else
+            {
+                string[] info = this.Getinfo(Convert.ToInt32(id.Text));
+                name.Text = info[0];
+                phone.Text = info[1];
+                address.Text = info[2];
+                note.Text = info[3];
+            }
         }
+        
+
+        private void ids_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(id.Text))
+            {
+
+            }
+            else
+            {
+                string[] info = this.Getinfo(Convert.ToInt32(id.Text));
+                dename.Text = info[0];
+                dephone.Text = info[1];
+                deaddress.Text = info[2];
+                denote.Text = info[3];
+            }      
+        }
+
+        private void debut_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ids.Text)==false)
+            {
+                if (MessageBox.Show("确定删除该商家吗？", "在？", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    string sql = string.Format("delete  from [store] where [id] = '{0}'", ids.Text);
+                    int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
+                    if (row == 1)
+                    {
+                        MessageBox.Show("删除成功");
+                        this.storemerre();
+                        this.clear();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("你没有选中任何行");
+            }
+        }
+
         /// <summary>
         /// 查询对应id的信息，并保存在数组中,长度为[3]，包含"name,phone,address,note"四条数据。
         /// </summary>
@@ -104,27 +158,21 @@ namespace Warehouse_Manager
             }
         }
 
-        private void ids_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// 清空各个控件的内容
+        /// </summary>
+        public  void clear()
         {
-            string[] info = this.Getinfo(Convert.ToInt32(id.Text));
-            dename.Text = info[0];
-            dephone.Text = info[1];
-            deaddress.Text = info[2];
-            denote.Text = info[3];
-        }
-
-        private void debut_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("确定删除该商家吗？","在？",MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                string sql = string.Format("delete  from [store] where [id] = '{0}'", ids.Text);
-                int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
-                if(row == 1)
-                {
-                    MessageBox.Show("删除成功");
-                    this.storemerre();
-                }
-            }
+            name.Text = null;
+            phone.Text = null;
+            address.Text = null;
+            note.Text = null;
+            dename.Text = null;
+            dephone.Text = null;
+            deaddress.Text = null;
+            denote.Text = null;
+            id.Text = null;
+            ids.Text = null;
         }
     }
 }

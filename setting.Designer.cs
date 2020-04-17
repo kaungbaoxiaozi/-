@@ -76,9 +76,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(7, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 17);
+            this.label2.Size = new System.Drawing.Size(253, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "*当库存低于设定值时，会在状态栏提醒用户";
+            this.label2.Text = "*当库存低于设定值时，状态栏会出现警告信息";
             // 
             // button1
             // 

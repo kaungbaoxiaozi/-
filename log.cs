@@ -128,6 +128,7 @@ namespace Warehouse_Manager
                 Font myfont = new Font(fname,fsizef,fstyle);
                 log1.Font = myfont;
                 log2.Font = myfont;
+                log3.Font = myfont;
             }
         }
 
@@ -162,6 +163,17 @@ namespace Warehouse_Manager
                 }
             }
             MessageBox.Show(log1.Font.ToString());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string time = dateTimePicker2.Text;
+            string sql = string.Format("insert into [log] values('{0}','{1}') ",time,log3.Text);
+            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
+            if (row == 1)
+            {
+                MessageBox.Show("提交成功");
+            }
         }
     }
 }
