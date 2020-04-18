@@ -21,25 +21,25 @@ namespace Warehouse_Manager
         private void login_Load(object sender, EventArgs e)
         {
             int hour = DateTime.Now.Hour;
-            if (7<hour&&hour<11)
+            if (7 <= hour&&hour <11)
             {
                 hi.Text = "上午好";
             }
             else
             {
-                if (11 < hour && hour < 14)
+                if (11 <= hour && hour < 14)
                 {
                     hi.Text = "中午好";
                 }
                 else
                 {
-                    if (14 < hour && hour < 18)
+                    if (14 <= hour && hour < 18)
                     {
                         hi.Text = "下午好";
                     }
                     else
                     {
-                        if (18 < hour && hour < 23)
+                        if (18 <= hour && hour < 23)
                         {
                             hi.Text = "晚上好";
                         }

@@ -20,25 +20,26 @@ namespace Warehouse_Manager
 
         private void main_Load(object sender, EventArgs e)
         {
+            // TODO: 这行代码将数据加载到表“wMSDataSet._in”中。您可以根据需要移动或删除它。
+            this.inTableAdapter.Fill(this.wMSDataSet._in);
             // TODO: 这行代码将数据加载到表“wMSDataSet.sup”中。您可以根据需要移动或删除它。
             this.supTableAdapter.Fill(this.wMSDataSet.sup);
             // TODO: 这行代码将数据加载到表“wMSDataSet.product”中。您可以根据需要移动或删除它。
             this.productTableAdapter.Fill(this.wMSDataSet.product);
             // TODO: 这行代码将数据加载到表“wMSDataSet.store”中。您可以根据需要移动或删除它。
             this.storeTableAdapter.Fill(this.wMSDataSet.store);
-            // TODO: 这行代码将数据加载到表“wMSDataSet._in”中。您可以根据需要移动或删除它。
-            this.inTableAdapter.Fill(this.wMSDataSet._in);
+            
             // TODO: 这行代码将数据加载到表“wMSDataSet._out”中。您可以根据需要移动或删除它。
             this.outTableAdapter.Fill(this.wMSDataSet._out);
             //power.Text ="当前权限等级:"+ user.power;
             //label1.Text = user.uid;
             //label2.Text = user.upwd;
-            if(user.power != "S1")
+            if (user.power != "S1")
             {
                 管理权限仅管理员ToolStripMenuItem.Enabled = false;
             }
             //powerss.Text = "当前权限等级:" + user.power;
-            namess.Text = "【当前登录用户:" + user.uname + " | 权限等级:"+user.power+"】";
+            namess.Text = "【当前登录用户:" + user.uname + " | 权限等级:" + user.power + "】";
             propa.Visible = true;
             outpa.Visible = false;
             storepa.Visible = false;
@@ -49,7 +50,7 @@ namespace Warehouse_Manager
 
         private void 注销ToolStripMenuItem_Click(object sender, EventArgs e)//注销登录
         {
-            if (MessageBox.Show("确定注销账户吗？","在？",MessageBoxButtons.OKCancel)==DialogResult.OK)//弹出对话框二次询问
+            if (MessageBox.Show("确定注销账户吗？", "在？", MessageBoxButtons.OKCancel) == DialogResult.OK)//弹出对话框二次询问
             {
                 this.Hide();
                 login login = new login();
@@ -65,7 +66,7 @@ namespace Warehouse_Manager
 
         private void 管理权限仅管理员ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             if (user.power == "S1")
             {
                 //MessageBox.Show("你是谁？","二次确认",MessageBoxButtons.);
@@ -80,7 +81,7 @@ namespace Warehouse_Manager
 
         private void power_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("S1:完全控制,S0:仅查询","等级说明",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("S1:完全控制,S0:仅查询", "等级说明", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -96,7 +97,7 @@ namespace Warehouse_Manager
             inpa.Visible = false;
             sppa.Visible = false;
             panelname.Text = "库存查询";
-            
+
         }
 
         private void 出库管理ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -210,7 +211,7 @@ namespace Warehouse_Manager
             info.ShowDialog();
         }
 
-        public void outre ()//刷新出库
+        public void outre()//刷新出库
         {
             try
             {
@@ -244,6 +245,23 @@ namespace Warehouse_Manager
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+        }
+
+        public void inre()//刷新入库
+        {
+            try
+            {
+                this.inTableAdapter.Fill(this.wMSDataSet._in);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void spre()
+        {
+            this.supTableAdapter.Fill(this.wMSDataSet.sup);
         }
 
         private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -302,6 +320,36 @@ namespace Warehouse_Manager
         {
             storemer storemer = new storemer();
             storemer.Show(this);
+        }
+
+        private void 添加入库记录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            inadd inadd = new inadd();
+            inadd.Show(this);
+        }
+
+        private void 更新出库记录ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            inmer inmer = new inmer();
+            inmer.Show(this);
+        }
+
+        private void 添加供应商ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            spadd spadd = new spadd();
+            spadd.Show(this);
+        }
+
+        private void 维护供应商信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            spmer spmer = new spmer();
+            spmer.Show(this);
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

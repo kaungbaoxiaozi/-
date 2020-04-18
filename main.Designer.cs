@@ -79,9 +79,8 @@
             this.spnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.spidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.intimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.inBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.outpa = new System.Windows.Forms.Panel();
             this.outdata = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -113,13 +112,12 @@
             this.outBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.outTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.outTableAdapter();
             this.outBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.inBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.inTableAdapter();
             this.storeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.storeTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.storeTableAdapter();
             this.productTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.productTableAdapter();
             this.supTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.supTableAdapter();
             this.warning = new System.Windows.Forms.Timer(this.components);
+            this.inTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.inTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.propa.SuspendLayout();
@@ -128,7 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
             this.inpa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indata)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inBindingSource)).BeginInit();
             this.outpa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outdata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource2)).BeginInit();
@@ -141,7 +139,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -258,19 +255,19 @@
             // 录入ToolStripMenuItem
             // 
             this.录入ToolStripMenuItem.Name = "录入ToolStripMenuItem";
-            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.录入ToolStripMenuItem.Text = "录入终端信息";
             this.录入ToolStripMenuItem.Click += new System.EventHandler(this.录入ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(145, 6);
             // 
             // 更新终端信息ToolStripMenuItem
             // 
             this.更新终端信息ToolStripMenuItem.Name = "更新终端信息ToolStripMenuItem";
-            this.更新终端信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.更新终端信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.更新终端信息ToolStripMenuItem.Text = "维护终端信息";
             this.更新终端信息ToolStripMenuItem.Click += new System.EventHandler(this.更新终端信息ToolStripMenuItem_Click);
             // 
@@ -290,6 +287,7 @@
             this.添加入库记录ToolStripMenuItem.Name = "添加入库记录ToolStripMenuItem";
             this.添加入库记录ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.添加入库记录ToolStripMenuItem.Text = "添加入库记录";
+            this.添加入库记录ToolStripMenuItem.Click += new System.EventHandler(this.添加入库记录ToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
@@ -301,6 +299,7 @@
             this.更新出库记录ToolStripMenuItem1.Name = "更新出库记录ToolStripMenuItem1";
             this.更新出库记录ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.更新出库记录ToolStripMenuItem1.Text = "管理出库记录";
+            this.更新出库记录ToolStripMenuItem1.Click += new System.EventHandler(this.更新出库记录ToolStripMenuItem1_Click);
             // 
             // 供应商管理ToolStripMenuItem
             // 
@@ -318,6 +317,7 @@
             this.添加供应商ToolStripMenuItem.Name = "添加供应商ToolStripMenuItem";
             this.添加供应商ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.添加供应商ToolStripMenuItem.Text = "添加供应商信息";
+            this.添加供应商ToolStripMenuItem.Click += new System.EventHandler(this.添加供应商ToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
@@ -329,6 +329,7 @@
             this.维护供应商信息ToolStripMenuItem.Name = "维护供应商信息ToolStripMenuItem";
             this.维护供应商信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.维护供应商信息ToolStripMenuItem.Text = "维护供应商信息";
+            this.维护供应商信息ToolStripMenuItem.Click += new System.EventHandler(this.维护供应商信息ToolStripMenuItem_Click);
             // 
             // 帮助ToolStripMenuItem
             // 
@@ -493,12 +494,12 @@
             this.spnameDataGridViewTextBoxColumn,
             this.spidDataGridViewTextBoxColumn,
             this.intimeDataGridViewTextBoxColumn,
-            this.noteDataGridViewTextBoxColumn,
             this.uidDataGridViewTextBoxColumn1});
-            this.indata.DataSource = this.inBindingSource1;
+            this.indata.DataSource = this.inBindingSource;
             this.indata.Dock = System.Windows.Forms.DockStyle.Fill;
             this.indata.Location = new System.Drawing.Point(0, 0);
             this.indata.Name = "indata";
+            this.indata.ReadOnly = true;
             this.indata.RowTemplate.Height = 23;
             this.indata.Size = new System.Drawing.Size(662, 379);
             this.indata.TabIndex = 0;
@@ -506,56 +507,56 @@
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "入库编号";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
             this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
             this.idDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // numberDataGridViewTextBoxColumn1
             // 
             this.numberDataGridViewTextBoxColumn1.DataPropertyName = "number";
-            this.numberDataGridViewTextBoxColumn1.HeaderText = "入库数量";
+            this.numberDataGridViewTextBoxColumn1.HeaderText = "number";
             this.numberDataGridViewTextBoxColumn1.Name = "numberDataGridViewTextBoxColumn1";
+            this.numberDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // pnameDataGridViewTextBoxColumn1
             // 
             this.pnameDataGridViewTextBoxColumn1.DataPropertyName = "pname";
-            this.pnameDataGridViewTextBoxColumn1.HeaderText = "产品名称";
+            this.pnameDataGridViewTextBoxColumn1.HeaderText = "pname";
             this.pnameDataGridViewTextBoxColumn1.Name = "pnameDataGridViewTextBoxColumn1";
+            this.pnameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // spnameDataGridViewTextBoxColumn
             // 
             this.spnameDataGridViewTextBoxColumn.DataPropertyName = "spname";
-            this.spnameDataGridViewTextBoxColumn.HeaderText = "供应商名称";
+            this.spnameDataGridViewTextBoxColumn.HeaderText = "spname";
             this.spnameDataGridViewTextBoxColumn.Name = "spnameDataGridViewTextBoxColumn";
+            this.spnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // spidDataGridViewTextBoxColumn
             // 
             this.spidDataGridViewTextBoxColumn.DataPropertyName = "spid";
-            this.spidDataGridViewTextBoxColumn.HeaderText = "供应商编号";
+            this.spidDataGridViewTextBoxColumn.HeaderText = "spid";
             this.spidDataGridViewTextBoxColumn.Name = "spidDataGridViewTextBoxColumn";
+            this.spidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // intimeDataGridViewTextBoxColumn
             // 
             this.intimeDataGridViewTextBoxColumn.DataPropertyName = "intime";
-            this.intimeDataGridViewTextBoxColumn.HeaderText = "入库时间";
+            this.intimeDataGridViewTextBoxColumn.HeaderText = "intime";
             this.intimeDataGridViewTextBoxColumn.Name = "intimeDataGridViewTextBoxColumn";
-            // 
-            // noteDataGridViewTextBoxColumn
-            // 
-            this.noteDataGridViewTextBoxColumn.DataPropertyName = "note";
-            this.noteDataGridViewTextBoxColumn.HeaderText = "备注";
-            this.noteDataGridViewTextBoxColumn.Name = "noteDataGridViewTextBoxColumn";
+            this.intimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // uidDataGridViewTextBoxColumn1
             // 
             this.uidDataGridViewTextBoxColumn1.DataPropertyName = "uid";
-            this.uidDataGridViewTextBoxColumn1.HeaderText = "操作员编号";
+            this.uidDataGridViewTextBoxColumn1.HeaderText = "uid";
             this.uidDataGridViewTextBoxColumn1.Name = "uidDataGridViewTextBoxColumn1";
+            this.uidDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // inBindingSource1
+            // inBindingSource
             // 
-            this.inBindingSource1.DataMember = "in";
-            this.inBindingSource1.DataSource = this.wMSDataSet;
+            this.inBindingSource.DataMember = "in";
+            this.inBindingSource.DataSource = this.wMSDataSet;
             // 
             // outpa
             // 
@@ -761,6 +762,7 @@
             this.spdata.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spdata.Location = new System.Drawing.Point(0, 0);
             this.spdata.Name = "spdata";
+            this.spdata.ReadOnly = true;
             this.spdata.RowTemplate.Height = 23;
             this.spdata.Size = new System.Drawing.Size(662, 379);
             this.spdata.TabIndex = 0;
@@ -777,24 +779,28 @@
             this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn2.HeaderText = "供应商名称";
             this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // addressDataGridViewTextBoxColumn1
             // 
             this.addressDataGridViewTextBoxColumn1.DataPropertyName = "address";
             this.addressDataGridViewTextBoxColumn1.HeaderText = "地址";
             this.addressDataGridViewTextBoxColumn1.Name = "addressDataGridViewTextBoxColumn1";
+            this.addressDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // phoneDataGridViewTextBoxColumn1
             // 
             this.phoneDataGridViewTextBoxColumn1.DataPropertyName = "phone";
             this.phoneDataGridViewTextBoxColumn1.HeaderText = "电话";
             this.phoneDataGridViewTextBoxColumn1.Name = "phoneDataGridViewTextBoxColumn1";
+            this.phoneDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // noteDataGridViewTextBoxColumn2
             // 
             this.noteDataGridViewTextBoxColumn2.DataPropertyName = "note";
             this.noteDataGridViewTextBoxColumn2.HeaderText = "备注";
             this.noteDataGridViewTextBoxColumn2.Name = "noteDataGridViewTextBoxColumn2";
+            this.noteDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // supBindingSource
             // 
@@ -814,15 +820,6 @@
             // 
             this.outBindingSource1.DataMember = "out";
             this.outBindingSource1.DataSource = this.wMSDataSet;
-            // 
-            // inBindingSource
-            // 
-            this.inBindingSource.DataMember = "in";
-            this.inBindingSource.DataSource = this.wMSDataSet;
-            // 
-            // inTableAdapter
-            // 
-            this.inTableAdapter.ClearBeforeFill = true;
             // 
             // storeBindingSource
             // 
@@ -846,6 +843,10 @@
             this.warning.Enabled = true;
             this.warning.Interval = 1000;
             this.warning.Tick += new System.EventHandler(this.warning_Tick);
+            // 
+            // inTableAdapter
+            // 
+            this.inTableAdapter.ClearBeforeFill = true;
             // 
             // main
             // 
@@ -876,7 +877,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).EndInit();
             this.inpa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.indata)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inBindingSource)).EndInit();
             this.outpa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.outdata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource2)).EndInit();
@@ -889,7 +890,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -911,8 +911,6 @@
         private System.Windows.Forms.BindingSource outBindingSource;
         private WMSDataSetTableAdapters.outTableAdapter outTableAdapter;
         private System.Windows.Forms.BindingSource outBindingSource1;
-        private System.Windows.Forms.BindingSource inBindingSource;
-        private WMSDataSetTableAdapters.inTableAdapter inTableAdapter;
         private System.Windows.Forms.BindingSource storeBindingSource;
         private WMSDataSetTableAdapters.storeTableAdapter storeTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem 库存查询ToolStripMenuItem;
@@ -933,15 +931,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView indata;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pnameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn spnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn spidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn intimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uidDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource inBindingSource1;
         private System.Windows.Forms.DataGridView outdata;
         private System.Windows.Forms.BindingSource outBindingSource2;
         private System.Windows.Forms.DataGridView storedata;
@@ -988,5 +977,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource inBindingSource;
+        private WMSDataSetTableAdapters.inTableAdapter inTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pnameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn spnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn spidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn intimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uidDataGridViewTextBoxColumn1;
     }
 }
