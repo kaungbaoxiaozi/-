@@ -30,11 +30,17 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.bgmfalse = new System.Windows.Forms.RadioButton();
+            this.bgmtrue = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.wartime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.choosebgm = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +64,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label4);
+            this.tabPage1.Controls.Add(this.choosebgm);
+            this.tabPage1.Controls.Add(this.bgmfalse);
+            this.tabPage1.Controls.Add(this.bgmtrue);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.wartime);
@@ -71,6 +82,38 @@
             this.tabPage1.Text = "常规设置";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // bgmfalse
+            // 
+            this.bgmfalse.AutoSize = true;
+            this.bgmfalse.Location = new System.Drawing.Point(103, 112);
+            this.bgmfalse.Name = "bgmfalse";
+            this.bgmfalse.Size = new System.Drawing.Size(74, 21);
+            this.bgmfalse.TabIndex = 8;
+            this.bgmfalse.TabStop = true;
+            this.bgmfalse.Text = "专注工作";
+            this.bgmfalse.UseVisualStyleBackColor = true;
+            // 
+            // bgmtrue
+            // 
+            this.bgmtrue.AutoSize = true;
+            this.bgmtrue.Location = new System.Drawing.Point(11, 112);
+            this.bgmtrue.Name = "bgmtrue";
+            this.bgmtrue.Size = new System.Drawing.Size(86, 21);
+            this.bgmtrue.TabIndex = 5;
+            this.bgmtrue.TabStop = true;
+            this.bgmtrue.Text = "听点小曲儿";
+            this.bgmtrue.UseVisualStyleBackColor = true;
+            this.bgmtrue.CheckedChanged += new System.EventHandler(this.bgmtrue_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "工作状态：";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -82,12 +125,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(133, 34);
+            this.button1.Location = new System.Drawing.Point(301, 240);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 24);
             this.button1.TabIndex = 2;
-            this.button1.Text = "确定";
+            this.button1.Text = "保存";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -118,6 +161,31 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // choosebgm
+            // 
+            this.choosebgm.Location = new System.Drawing.Point(185, 111);
+            this.choosebgm.Name = "choosebgm";
+            this.choosebgm.Size = new System.Drawing.Size(75, 23);
+            this.choosebgm.TabIndex = 9;
+            this.choosebgm.Text = "选择BGM";
+            this.choosebgm.UseVisualStyleBackColor = true;
+            this.choosebgm.Visible = false;
+            this.choosebgm.Click += new System.EventHandler(this.choosebgm_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(217, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "*部分外文歌曲无法播放（已知：韩语）";
+            // 
             // setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -129,6 +197,7 @@
             this.Name = "setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "setting";
+            this.Load += new System.EventHandler(this.setting_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -145,5 +214,11 @@
         private System.Windows.Forms.TextBox wartime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton bgmtrue;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RadioButton bgmfalse;
+        private System.Windows.Forms.Button choosebgm;
+        private System.Windows.Forms.Label label4;
     }
 }

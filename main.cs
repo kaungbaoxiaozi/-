@@ -39,13 +39,23 @@ namespace Warehouse_Manager
                 管理权限仅管理员ToolStripMenuItem.Enabled = false;
             }
             //powerss.Text = "当前权限等级:" + user.power;
-            namess.Text = "【当前登录用户:" + user.uname + " | 权限等级:" + user.power + "】";
+            namess.Text = "【当前登录用户:" + user.uname + " | 权限等级:" + user.power + "】 ";
             propa.Visible = true;
             outpa.Visible = false;
             storepa.Visible = false;
             inpa.Visible = false;
             sppa.Visible = false;
             panelname.Text = "库存查询";
+            string[] setting = GetSetting();
+            if(Convert.ToInt32( setting[0]) == 1)
+            {
+                myplayer.URL = setting[1];
+            }
+            else
+            {
+                myplayer.URL = null;
+            }
+
         }
 
         private void 注销ToolStripMenuItem_Click(object sender, EventArgs e)//注销登录
@@ -53,6 +63,7 @@ namespace Warehouse_Manager
             if (MessageBox.Show("确定注销账户吗？", "在？", MessageBoxButtons.OKCancel) == DialogResult.OK)//弹出对话框二次询问
             {
                 this.Hide();
+                this.myplayer.Ctlcontrols.pause();
                 login login = new login();
                 login.Show();
             }
@@ -211,62 +222,11 @@ namespace Warehouse_Manager
             info.ShowDialog();
         }
 
-        public void outre()//刷新出库
-        {
-            try
-            {
-                this.outTableAdapter.FillBy(this.wMSDataSet._out);
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
-        public void prore()//刷新库存
-        {
-            try
-            {
-                this.productTableAdapter.FillBy(this.wMSDataSet.product);
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void storere()//刷新商店
-        {
-            try
-            {
-                this.storeTableAdapter.store(this.wMSDataSet.store);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void inre()//刷新入库
-        {
-            try
-            {
-                this.inTableAdapter.Fill(this.wMSDataSet._in);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void spre()
-        {
-            this.supTableAdapter.Fill(this.wMSDataSet.sup);
-        }
 
         private void 帮助ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            setting set = new setting();
+            setting set = new setting(this);
             set.ShowDialog(this);
         }
 
@@ -346,10 +306,95 @@ namespace Warehouse_Manager
             spmer.Show(this);
         }
 
-        private void fillToolStripButton_Click(object sender, EventArgs e)
-        {
-            
+        //*************************************************自定义方法*****************************************************//
 
+        public void outre()//刷新出库
+        {
+            try
+            {
+                this.outTableAdapter.FillBy(this.wMSDataSet._out);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void prore()//刷新库存
+        {
+            try
+            {
+                this.productTableAdapter.FillBy(this.wMSDataSet.product);
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void storere()//刷新商店
+        {
+            try
+            {
+                this.storeTableAdapter.store(this.wMSDataSet.store);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void inre()//刷新入库
+        {
+            try
+            {
+                this.inTableAdapter.Fill(this.wMSDataSet._in);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void spre()//刷新供应商
+        {
+            this.supTableAdapter.Fill(this.wMSDataSet.sup);
+        }
+
+        public void SetPlayerUrl(string url)
+        {
+            myplayer.URL = url;
+        }
+        /// <summary>
+        /// 获取用户设置
+        /// </summary>
+        /// <returns>返还一个数组(bgmmode，bgmurl)</returns>
+        public string[] GetSetting()
+        {
+            string sql = string.Format("select [bgmmode],[bgmurl] from [setting] where [id] = '{0}'",user.uid);
+            string[] setting = new string[2];
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sql);
+            while (reader.Read())
+            {
+                setting[0] = reader["bgmmode"].ToString();
+                setting[1] = reader["bgmurl"].ToString();
+            }
+            return setting;
+        }
+
+
+        private void myplayer_ClickEvent(object sender, AxWMPLib._WMPOCXEvents_ClickEvent e)
+        {
+            switch (Convert.ToInt32(myplayer.playState))
+            {
+                case 3:
+                    myplayer.Ctlcontrols.pause();
+                    break;
+                case 2:
+                    myplayer.Ctlcontrols.play();
+                    break;
+                
+            }
         }
     }
 }

@@ -138,15 +138,24 @@
   <metadata name="outBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>379, 55</value>
   </metadata>
-  <metadata name="outcm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1186, 55</value>
-  </metadata>
   <metadata name="storeBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>700, 55</value>
   </metadata>
   <metadata name="supBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>875, 55</value>
   </metadata>
+  <data name="myplayer.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAEQEAAAIB
+        AAAAAQAAAAAAAAAAAAAAAPwAAAAAAwAACABaAAAAQwA6AFwAVQBzAGUAcgBzAFwAWABtAGEAcwBsAHUA
+        bABsAGEAYgB5AFwATQB1AHMAaQBjAFwATQBpAHIAbwAgAC0AIABQAGUAdABhAGwAcwAuAG0AcAAzAAAA
+        BQAAAAAAAADwPwMAAAAAAAUAAAAAAAAAAAAIAAIAAAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAA
+        AAADADIAAAALAAAACAAKAAAAbgBvAG4AZQAAAAsAAAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIA
+        AAAAAAgAAgAAAAAACAACAAAAAAALAAAAlQIAAJUCAAAL
+</value>
+  </data>
   <metadata name="outBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>264, 17</value>
   </metadata>

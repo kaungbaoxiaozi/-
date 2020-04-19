@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.账号管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注销ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,8 +92,6 @@
             this.outtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.outcm = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storepa = new System.Windows.Forms.Panel();
             this.storedata = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +101,7 @@
             this.noteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.storeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sppa = new System.Windows.Forms.Panel();
+            this.myplayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.spdata = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,11 +130,11 @@
             this.outpa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outdata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource2)).BeginInit();
-            this.outcm.SuspendLayout();
             this.storepa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storedata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource1)).BeginInit();
             this.sppa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.myplayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spdata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).BeginInit();
@@ -155,7 +155,7 @@
             this.关于ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(662, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(672, 25);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -369,39 +369,40 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.AutoSize = false;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.panelname,
             this.timess,
             this.warinfo,
             this.namess});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 404);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 401);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(662, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(672, 25);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // panelname
             // 
             this.panelname.Name = "panelname";
-            this.panelname.Size = new System.Drawing.Size(68, 17);
+            this.panelname.Size = new System.Drawing.Size(68, 20);
             this.panelname.Text = "当前模块：";
             // 
             // timess
             // 
             this.timess.Name = "timess";
-            this.timess.Size = new System.Drawing.Size(33, 17);
+            this.timess.Size = new System.Drawing.Size(33, 20);
             this.timess.Text = "time";
             // 
             // warinfo
             // 
             this.warinfo.Name = "warinfo";
-            this.warinfo.Size = new System.Drawing.Size(439, 17);
+            this.warinfo.Size = new System.Drawing.Size(449, 20);
             this.warinfo.Spring = true;
             // 
             // namess
             // 
             this.namess.Name = "namess";
-            this.namess.Size = new System.Drawing.Size(107, 17);
+            this.namess.Size = new System.Drawing.Size(107, 20);
             this.namess.Text = "name and power";
             // 
             // timer1
@@ -415,7 +416,7 @@
             this.propa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propa.Location = new System.Drawing.Point(0, 25);
             this.propa.Name = "propa";
-            this.propa.Size = new System.Drawing.Size(662, 379);
+            this.propa.Size = new System.Drawing.Size(672, 376);
             this.propa.TabIndex = 5;
             // 
             // prodata
@@ -436,7 +437,7 @@
             this.prodata.Name = "prodata";
             this.prodata.ReadOnly = true;
             this.prodata.RowTemplate.Height = 23;
-            this.prodata.Size = new System.Drawing.Size(662, 379);
+            this.prodata.Size = new System.Drawing.Size(672, 376);
             this.prodata.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -476,7 +477,7 @@
             this.inpa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inpa.Location = new System.Drawing.Point(0, 25);
             this.inpa.Name = "inpa";
-            this.inpa.Size = new System.Drawing.Size(662, 379);
+            this.inpa.Size = new System.Drawing.Size(672, 376);
             this.inpa.TabIndex = 6;
             // 
             // indata
@@ -501,7 +502,7 @@
             this.indata.Name = "indata";
             this.indata.ReadOnly = true;
             this.indata.RowTemplate.Height = 23;
-            this.indata.Size = new System.Drawing.Size(662, 379);
+            this.indata.Size = new System.Drawing.Size(672, 376);
             this.indata.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn2
@@ -564,7 +565,7 @@
             this.outpa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.outpa.Location = new System.Drawing.Point(0, 25);
             this.outpa.Name = "outpa";
-            this.outpa.Size = new System.Drawing.Size(662, 379);
+            this.outpa.Size = new System.Drawing.Size(672, 376);
             this.outpa.TabIndex = 7;
             // 
             // outdata
@@ -588,7 +589,7 @@
             this.outdata.Location = new System.Drawing.Point(0, 0);
             this.outdata.Name = "outdata";
             this.outdata.RowTemplate.Height = 23;
-            this.outdata.Size = new System.Drawing.Size(662, 379);
+            this.outdata.Size = new System.Drawing.Size(672, 376);
             this.outdata.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn1
@@ -645,26 +646,13 @@
             this.outBindingSource2.DataMember = "out";
             this.outBindingSource2.DataSource = this.wMSDataSet;
             // 
-            // outcm
-            // 
-            this.outcm.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.刷新ToolStripMenuItem});
-            this.outcm.Name = "outre";
-            this.outcm.Size = new System.Drawing.Size(101, 26);
-            // 
-            // 刷新ToolStripMenuItem
-            // 
-            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.刷新ToolStripMenuItem.Text = "刷新";
-            // 
             // storepa
             // 
             this.storepa.Controls.Add(this.storedata);
             this.storepa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.storepa.Location = new System.Drawing.Point(0, 25);
             this.storepa.Name = "storepa";
-            this.storepa.Size = new System.Drawing.Size(662, 379);
+            this.storepa.Size = new System.Drawing.Size(672, 376);
             this.storepa.TabIndex = 8;
             // 
             // storedata
@@ -687,7 +675,7 @@
             this.storedata.Name = "storedata";
             this.storedata.ReadOnly = true;
             this.storedata.RowTemplate.Height = 23;
-            this.storedata.Size = new System.Drawing.Size(662, 379);
+            this.storedata.Size = new System.Drawing.Size(672, 376);
             this.storedata.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn3
@@ -741,8 +729,20 @@
             this.sppa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sppa.Location = new System.Drawing.Point(0, 25);
             this.sppa.Name = "sppa";
-            this.sppa.Size = new System.Drawing.Size(662, 379);
+            this.sppa.Size = new System.Drawing.Size(672, 376);
             this.sppa.TabIndex = 9;
+            // 
+            // myplayer
+            // 
+            this.myplayer.AllowDrop = true;
+            this.myplayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.myplayer.Enabled = true;
+            this.myplayer.Location = new System.Drawing.Point(647, 401);
+            this.myplayer.Name = "myplayer";
+            this.myplayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("myplayer.OcxState")));
+            this.myplayer.Size = new System.Drawing.Size(25, 25);
+            this.myplayer.TabIndex = 1;
+            this.myplayer.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.myplayer_ClickEvent);
             // 
             // spdata
             // 
@@ -764,7 +764,7 @@
             this.spdata.Name = "spdata";
             this.spdata.ReadOnly = true;
             this.spdata.RowTemplate.Height = 23;
-            this.spdata.Size = new System.Drawing.Size(662, 379);
+            this.spdata.Size = new System.Drawing.Size(672, 376);
             this.spdata.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn4
@@ -852,14 +852,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 426);
+            this.ClientSize = new System.Drawing.Size(672, 426);
+            this.Controls.Add(this.myplayer);
             this.Controls.Add(this.sppa);
             this.Controls.Add(this.storepa);
             this.Controls.Add(this.outpa);
             this.Controls.Add(this.inpa);
             this.Controls.Add(this.propa);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.statusStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "main";
             this.ShowIcon = false;
@@ -881,11 +882,11 @@
             this.outpa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.outdata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource2)).EndInit();
-            this.outcm.ResumeLayout(false);
             this.storepa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.storedata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource1)).EndInit();
             this.sppa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.myplayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spdata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).EndInit();
@@ -950,8 +951,6 @@
         private System.Windows.Forms.ToolStripMenuItem 添加出库记录ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 作者说明ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开发日志ToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip outcm;
-        private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
         private System.Windows.Forms.Timer warning;
         private System.Windows.Forms.ToolStripMenuItem 条件查询ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
@@ -986,5 +985,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn spidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn intimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uidDataGridViewTextBoxColumn1;
+        private AxWMPLib.AxWindowsMediaPlayer myplayer;
     }
 }

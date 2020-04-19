@@ -13,9 +13,13 @@ namespace Warehouse_Manager
 {
     public partial class setting : Form
     {
-        public setting()
+        private main mai = null;
+        string bgmurl = null;
+
+        public setting(main main)
         {
             InitializeComponent();
+            this.mai = main;
         }
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -30,32 +34,89 @@ namespace Warehouse_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(wartime.Text))
+            int bgmmode ;
+            if(bgmtrue.Checked == true)
             {
-                MessageBox.Show("不要什么都不写就点确定！");
+                bgmmode = 1;
             }
             else
             {
+                bgmmode = 0;
+            }
+
+            //if (string.IsNullOrWhiteSpace(wartime.Text))
+            //{
+            //    MessageBox.Show("不要什么都不写就点确定！");
+            //}
+            //else
+            //{
                 string sqlca = string.Format("select count(*) from [setting] where [id] = '{0}'",user.uid);
                 SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
                 if (reader.HasRows)
                 {
-                    string sqls = string.Format("update [setting] set [warning] = '{0}' where [id] = '{1}'", wartime.Text, user.uid);
+                    string sqls = string.Format("update [setting] set [warning] = '{0}',[bgmmode] = '{1}',[bgmurl] = '{2}' where [id] = '{3}'", wartime.Text,bgmmode,bgmurl,user.uid);
                     string rows = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqls).ToString();
                     if(rows == "1")
                     {
-                        MessageBox.Show("更新成功");
+                        MessageBox.Show("设置成功");
                     }
                 }
                 else
                 {
-                    string sql = string.Format("insert into [setting] values ('{0}','{1}')", user.uid, wartime.Text);
+                    string sql = string.Format("insert into [setting] values ('{0}','{1}','{2}','{3}')", user.uid, wartime.Text,bgmmode,bgmurl);
                     string row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql).ToString();
                     if (row == "1")
                     {
                         MessageBox.Show("保存成功！");
                     }
                 }
+            //}
+        }
+
+        private void setting_Load(object sender, EventArgs e)
+        {
+            string sql = string.Format("select [bgmmode] from [setting] where [id] = '{0}'",user.uid);
+            int bgmmode = Convert.ToInt32( SqlHelper.ExecuteScalar(SqlHelper.constr,CommandType.Text,sql));
+            if(bgmmode == 1)
+            {
+                bgmtrue.Checked = true;
+            }
+            else
+            {
+                bgmfalse.Checked = true;
+            }
+
+            if( bgmtrue.Checked == true)
+            {
+                choosebgm.Visible = true;
+            }
+            string sqls = string.Format("select [warning] from [setting] where [id] = '{0}'", user.uid);
+            int warning = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqls));
+            wartime.Text = warning.ToString();
+        }
+
+        private void choosebgm_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            //main mai = (main)this.Owner;
+            mai.SetPlayerUrl(openFileDialog1.FileName);
+            bgmurl = openFileDialog1.FileName;
+            
+        }
+
+        private void bgmtrue_CheckedChanged(object sender, EventArgs e)
+        {
+            if (bgmtrue.Checked == true)
+            {
+                choosebgm.Visible = true;
+            }
+            else
+            {
+                choosebgm.Visible = false;
             }
         }
     }

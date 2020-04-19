@@ -39,12 +39,12 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.open = new System.Windows.Forms.OpenFileDialog();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -102,16 +102,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
             this.dateTimePicker1.TabIndex = 4;
             // 
-            // player
-            // 
-            this.player.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.player.Enabled = true;
-            this.player.Location = new System.Drawing.Point(0, 25);
-            this.player.Name = "player";
-            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
-            this.player.Size = new System.Drawing.Size(898, 480);
-            this.player.TabIndex = 5;
-            // 
             // open
             // 
             this.open.FileName = "openFileDialog1";
@@ -134,6 +124,16 @@
             this.toolStripLabel1.Text = "文件";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
+            // player
+            // 
+            this.player.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.player.Enabled = true;
+            this.player.Location = new System.Drawing.Point(0, 25);
+            this.player.Name = "player";
+            this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
+            this.player.Size = new System.Drawing.Size(898, 480);
+            this.player.TabIndex = 5;
+            // 
             // test1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -148,9 +148,9 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "test1";
             this.Text = "test1";
-            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,9 +167,9 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private AxWMPLib.AxWindowsMediaPlayer player;
         private System.Windows.Forms.OpenFileDialog open;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private AxWMPLib.AxWindowsMediaPlayer player;
     }
 }

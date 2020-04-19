@@ -104,6 +104,12 @@
     <Compile Include="spmer.Designer.cs">
       <DependentUpon>spmer.cs</DependentUpon>
     </Compile>
+    <Compile Include="test3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test3.Designer.cs">
+      <DependentUpon>test3.cs</DependentUpon>
+    </Compile>
     <Compile Include="usercpwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,12 +152,6 @@
     </Compile>
     <Compile Include="storemer.Designer.cs">
       <DependentUpon>storemer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="test0.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test0.Designer.cs">
-      <DependentUpon>test0.cs</DependentUpon>
     </Compile>
     <Compile Include="product.cs">
       <SubType>Form</SubType>
@@ -198,12 +198,6 @@
     <Compile Include="test2.Designer.cs">
       <DependentUpon>test2.cs</DependentUpon>
     </Compile>
-    <Compile Include="test3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="test3.Designer.cs">
-      <DependentUpon>test3.cs</DependentUpon>
-    </Compile>
     <Compile Include="user.cs" />
     <Compile Include="WMSDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -231,6 +225,9 @@
     <EmbeddedResource Include="spmer.resx">
       <DependentUpon>spmer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="test3.resx">
+      <DependentUpon>test3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="usercpwd.resx">
       <DependentUpon>usercpwd.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,9 +251,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="storemer.resx">
       <DependentUpon>storemer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test0.resx">
-      <DependentUpon>test0.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="product.resx">
       <DependentUpon>product.cs</DependentUpon>
@@ -284,9 +278,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="test2.resx">
       <DependentUpon>test2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test3.resx">
-      <DependentUpon>test3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
