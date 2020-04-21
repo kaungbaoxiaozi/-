@@ -253,6 +253,7 @@
             this.font.TabIndex = 12;
             this.font.Text = "字体";
             this.font.UseVisualStyleBackColor = true;
+            this.font.Click += new System.EventHandler(this.font_Click_1);
             // 
             // label3
             // 
@@ -360,7 +361,7 @@
             this.Name = "log";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "about";
+            this.Text = "日志";
             this.Load += new System.EventHandler(this.about_Load);
             this.tabControl1.ResumeLayout(false);
             this.inlog.ResumeLayout(false);

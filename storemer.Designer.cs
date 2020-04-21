@@ -41,6 +41,7 @@
             this.upbut = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.uptab = new System.Windows.Forms.TabPage();
+            this.name = new System.Windows.Forms.TextBox();
             this.note = new System.Windows.Forms.RichTextBox();
             this.address = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.dephone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ids = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
@@ -188,6 +188,13 @@
             this.uptab.Text = "修改终端信息";
             this.uptab.UseVisualStyleBackColor = true;
             // 
+            // name
+            // 
+            this.name.Location = new System.Drawing.Point(62, 47);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(160, 21);
+            this.name.TabIndex = 20;
+            // 
             // note
             // 
             this.note.Location = new System.Drawing.Point(62, 172);
@@ -254,7 +261,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(113, 12);
             this.label5.TabIndex = 10;
-            this.label5.Text = "当前选中记录编号：";
+            this.label5.Text = "当前选中终端编号：";
             // 
             // id
             // 
@@ -378,7 +385,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 12);
             this.label1.TabIndex = 12;
-            this.label1.Text = "当前选中记录编号：";
+            this.label1.Text = "当前选中终端编号：";
             // 
             // ids
             // 
@@ -388,13 +395,6 @@
             this.ids.Size = new System.Drawing.Size(0, 12);
             this.ids.TabIndex = 11;
             this.ids.TextChanged += new System.EventHandler(this.ids_TextChanged);
-            // 
-            // name
-            // 
-            this.name.Location = new System.Drawing.Point(62, 47);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(160, 21);
-            this.name.TabIndex = 20;
             // 
             // storemer
             // 

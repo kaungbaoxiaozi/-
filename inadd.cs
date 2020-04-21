@@ -50,6 +50,7 @@ namespace Warehouse_Manager
                     if (row == 1)
                     {
                         MessageBox.Show("入库成功");
+                        this.inTableAdapter.Fill(this.wMSDataSet._in);
                     }
                 }
             }

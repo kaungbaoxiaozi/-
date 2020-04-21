@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.choosebgm = new System.Windows.Forms.Button();
             this.bgmfalse = new System.Windows.Forms.RadioButton();
             this.bgmtrue = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,11 +40,11 @@
             this.wartime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.choosebgm = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -81,6 +83,26 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "常规设置";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(217, 17);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "*部分外文歌曲无法播放（已知：韩语）";
+            // 
+            // choosebgm
+            // 
+            this.choosebgm.Location = new System.Drawing.Point(185, 111);
+            this.choosebgm.Name = "choosebgm";
+            this.choosebgm.Size = new System.Drawing.Size(75, 23);
+            this.choosebgm.TabIndex = 9;
+            this.choosebgm.Text = "选择BGM";
+            this.choosebgm.UseVisualStyleBackColor = true;
+            this.choosebgm.Visible = false;
+            this.choosebgm.Click += new System.EventHandler(this.choosebgm_Click);
             // 
             // bgmfalse
             // 
@@ -153,6 +175,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Location = new System.Drawing.Point(69, 4);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
@@ -161,30 +184,19 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "*这里什么都没有";
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // choosebgm
-            // 
-            this.choosebgm.Location = new System.Drawing.Point(185, 111);
-            this.choosebgm.Name = "choosebgm";
-            this.choosebgm.Size = new System.Drawing.Size(75, 23);
-            this.choosebgm.TabIndex = 9;
-            this.choosebgm.Text = "选择BGM";
-            this.choosebgm.UseVisualStyleBackColor = true;
-            this.choosebgm.Visible = false;
-            this.choosebgm.Click += new System.EventHandler(this.choosebgm_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(217, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "*部分外文歌曲无法播放（已知：韩语）";
             // 
             // setting
             // 
@@ -194,13 +206,18 @@
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "setting";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "setting";
+            this.Text = "设置";
             this.Load += new System.EventHandler(this.setting_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -220,5 +237,6 @@
         private System.Windows.Forms.RadioButton bgmfalse;
         private System.Windows.Forms.Button choosebgm;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -45,7 +45,6 @@
             this.snamecom = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
-            this.number = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +53,13 @@
             this.sidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outtimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.number)).BeginInit();
             this.SuspendLayout();
             // 
             // productBindingSource
@@ -168,14 +169,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // number
-            // 
-            this.number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.number.Location = new System.Drawing.Point(83, 265);
-            this.number.Name = "number";
-            this.number.Size = new System.Drawing.Size(121, 21);
-            this.number.TabIndex = 0;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -257,14 +250,21 @@
             this.uidDataGridViewTextBoxColumn.Name = "uidDataGridViewTextBoxColumn";
             this.uidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // addout
+            // number
+            // 
+            this.number.Location = new System.Drawing.Point(83, 266);
+            this.number.Name = "number";
+            this.number.Size = new System.Drawing.Size(120, 21);
+            this.number.TabIndex = 12;
+            // 
+            // outadd
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 304);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.number);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.snamecom);
             this.Controls.Add(this.pnamecom);
@@ -273,7 +273,7 @@
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "addout";
+            this.Name = "outadd";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "添加出库记录";
@@ -284,6 +284,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.number)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,7 +305,6 @@
         private System.Windows.Forms.ComboBox snamecom;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox number;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn;
@@ -313,5 +313,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outtimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown number;
     }
 }

@@ -28,7 +28,7 @@ namespace Warehouse_Manager
             this.productTableAdapter.Fill(this.wMSDataSet.product);
             // TODO: 这行代码将数据加载到表“wMSDataSet.store”中。您可以根据需要移动或删除它。
             this.storeTableAdapter.Fill(this.wMSDataSet.store);
-            
+
             // TODO: 这行代码将数据加载到表“wMSDataSet._out”中。您可以根据需要移动或删除它。
             this.outTableAdapter.Fill(this.wMSDataSet._out);
             //power.Text ="当前权限等级:"+ user.power;
@@ -47,7 +47,7 @@ namespace Warehouse_Manager
             sppa.Visible = false;
             panelname.Text = "库存查询";
             string[] setting = GetSetting();
-            if(Convert.ToInt32( setting[0]) == 1)
+            if (Convert.ToInt32(setting[0]) == 1)
             {
                 myplayer.URL = setting[1];
             }
@@ -232,9 +232,9 @@ namespace Warehouse_Manager
 
         private void warning_Tick(object sender, EventArgs e)
         {
-            string sqlwar = string.Format("select [warning] from [setting] where [id] = '{0}' ",user.uid);
-            string warning = SqlHelper.ExecuteScalar(SqlHelper.constr,CommandType.Text,sqlwar).ToString();
-            string sqlrow = string.Format("SELECT COUNT(name) FROM [product] where [stock] <= '{0}'",warning);
+            string sqlwar = string.Format("select [warning] from [setting] where [id] = '{0}' ", user.uid);
+            string warning = SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlwar).ToString();
+            string sqlrow = string.Format("SELECT COUNT(name) FROM [product] where [stock] <= '{0}'", warning);
             int row = (int)SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlrow);//返还第一条第一列的数据 多用行数查询
             if (row == 0)
             {
@@ -371,7 +371,7 @@ namespace Warehouse_Manager
         /// <returns>返还一个数组(bgmmode，bgmurl)</returns>
         public string[] GetSetting()
         {
-            string sql = string.Format("select [bgmmode],[bgmurl] from [setting] where [id] = '{0}'",user.uid);
+            string sql = string.Format("select [bgmmode],[bgmurl] from [setting] where [id] = '{0}'", user.uid);
             string[] setting = new string[2];
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sql);
             while (reader.Read())
@@ -393,8 +393,29 @@ namespace Warehouse_Manager
                 case 2:
                     myplayer.Ctlcontrols.play();
                     break;
-                
             }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void myplayer_PlayStateChange(object sender, AxWMPLib._WMPOCXEvents_PlayStateChangeEvent e)
+        {
+            //if( Convert.ToInt32( myplayer.playState) == 1)
+            //{
+            //string[] setting = GetSetting();
+            ////myplayer.settings.setMode("loop", true);
+            //myplayer.URL = setting[1];
+            //myplayer.Ctlcontrols.play();
+
+            //}
+            if ((int)myplayer.playState == 1)
+            {
+                myplayer.Ctlcontrols.play();
+            }
+
         }
     }
 }

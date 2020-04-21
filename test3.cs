@@ -38,10 +38,5 @@ namespace Warehouse_Manager
             string strrow = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();//获取焦点触发行的第一个值
             MessageBox.Show(cell, strrow);
         }
-
-        private void dataGridView1_SelectionChanged(object sender,DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

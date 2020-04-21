@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +41,6 @@
             this.uidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wMSDataSet = new Warehouse_Manager.WMSDataSet();
-            this.number = new System.Windows.Forms.TextBox();
             this.inbut = new System.Windows.Forms.Button();
             this.spname = new System.Windows.Forms.ComboBox();
             this.supBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -53,21 +52,23 @@
             this.inTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.inTableAdapter();
             this.supTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.supTableAdapter();
             this.productTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.productTableAdapter();
+            this.number = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.number)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -83,9 +84,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(791, 254);
             this.dataGridView1.TabIndex = 19;
@@ -149,14 +150,6 @@
             // 
             this.wMSDataSet.DataSetName = "WMSDataSet";
             this.wMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // number
-            // 
-            this.number.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.number.Location = new System.Drawing.Point(73, 284);
-            this.number.Name = "number";
-            this.number.Size = new System.Drawing.Size(121, 21);
-            this.number.TabIndex = 12;
             // 
             // inbut
             // 
@@ -251,13 +244,20 @@
             // 
             this.productTableAdapter.ClearBeforeFill = true;
             // 
+            // number
+            // 
+            this.number.Location = new System.Drawing.Point(73, 284);
+            this.number.Name = "number";
+            this.number.Size = new System.Drawing.Size(120, 21);
+            this.number.TabIndex = 20;
+            // 
             // inadd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 328);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.number);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.inbut);
             this.Controls.Add(this.spname);
             this.Controls.Add(this.pname);
@@ -274,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.number)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,7 +283,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox number;
         private System.Windows.Forms.Button inbut;
         private System.Windows.Forms.ComboBox spname;
         private System.Windows.Forms.ComboBox pname;
@@ -303,5 +303,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn spidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn intimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown number;
     }
 }

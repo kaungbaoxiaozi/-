@@ -34,8 +34,8 @@ namespace Warehouse_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int bgmmode ;
-            if(bgmtrue.Checked == true)
+            int bgmmode;
+            if (bgmtrue.Checked == true)
             {
                 bgmmode = 1;
             }
@@ -44,33 +44,30 @@ namespace Warehouse_Manager
                 bgmmode = 0;
             }
 
-            //if (string.IsNullOrWhiteSpace(wartime.Text))
-            //{
-            //    MessageBox.Show("不要什么都不写就点确定！");
-            //}
-            //else
-            //{
-                string sqlca = string.Format("select count(*) from [setting] where [id] = '{0}'",user.uid);
-                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
-                if (reader.HasRows)
+            string sqlca = string.Format("select count(*) from [setting] where [id] = '{0}'", user.uid);
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
+            if (reader.HasRows)
+            {
+                string sqls = string.Format("update [setting] set [warning] = '{0}',[bgmmode] = '{1}',[bgmurl] = '{2}' where [id] = '{3}'", wartime.Text, bgmmode, bgmurl, user.uid);
+                string rows = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqls).ToString();
+                if (rows == "1")
                 {
-                    string sqls = string.Format("update [setting] set [warning] = '{0}',[bgmmode] = '{1}',[bgmurl] = '{2}' where [id] = '{3}'", wartime.Text,bgmmode,bgmurl,user.uid);
-                    string rows = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqls).ToString();
-                    if(rows == "1")
-                    {
-                        MessageBox.Show("设置成功");
-                    }
+                    MessageBox.Show("保存成功");
                 }
-                else
+            }
+            else
+            {
+                string sql = string.Format("insert into [setting] values ('{0}','{1}','{2}','{3}')", user.uid, wartime.Text, bgmmode, bgmurl);
+                string row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql).ToString();
+                if (row == "1")
                 {
-                    string sql = string.Format("insert into [setting] values ('{0}','{1}','{2}','{3}')", user.uid, wartime.Text,bgmmode,bgmurl);
-                    string row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql).ToString();
-                    if (row == "1")
-                    {
-                        MessageBox.Show("保存成功！");
-                    }
+                    MessageBox.Show("设置成功");
                 }
-            //}
+            }
+            if (bgmmode == 0)
+            {
+                mai.SetPlayerUrl(null);
+            }
         }
 
         private void setting_Load(object sender, EventArgs e)

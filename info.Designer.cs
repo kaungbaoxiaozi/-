@@ -151,7 +151,7 @@
             this.Name = "info";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "info";
+            this.Text = "关于";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -38,7 +38,6 @@
             this.snamet = new System.Windows.Forms.ComboBox();
             this.storeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wMSDataSet = new Warehouse_Manager.WMSDataSet();
-            this.numbert = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,6 +71,7 @@
             this.storeTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.storeTableAdapter();
             this.还原ToolStrip = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.numbert = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).BeginInit();
@@ -81,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outmerdata)).BeginInit();
             this.还原ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbert)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -96,11 +97,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.numbert);
             this.tabPage1.Controls.Add(this.label11);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.snamet);
-            this.tabPage1.Controls.Add(this.numbert);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -163,13 +164,6 @@
             // 
             this.wMSDataSet.DataSetName = "WMSDataSet";
             this.wMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // numbert
-            // 
-            this.numbert.Location = new System.Drawing.Point(66, 41);
-            this.numbert.Name = "numbert";
-            this.numbert.Size = new System.Drawing.Size(150, 21);
-            this.numbert.TabIndex = 5;
             // 
             // label3
             // 
@@ -463,6 +457,13 @@
             this.toolStripButton1.Text = "刷新";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // numbert
+            // 
+            this.numbert.Location = new System.Drawing.Point(65, 42);
+            this.numbert.Name = "numbert";
+            this.numbert.Size = new System.Drawing.Size(151, 21);
+            this.numbert.TabIndex = 10;
+            // 
             // outmer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -489,6 +490,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outmerdata)).EndInit();
             this.还原ToolStrip.ResumeLayout(false);
             this.还原ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbert)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,7 +505,6 @@
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.DataGridView outmerdata;
         private System.Windows.Forms.ComboBox snamet;
-        private System.Windows.Forms.TextBox numbert;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -536,5 +537,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numbert;
     }
 }

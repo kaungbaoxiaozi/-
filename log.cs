@@ -104,16 +104,6 @@ namespace Warehouse_Manager
             }
         }
 
-        private void infont_Click(object sender, EventArgs e)
-        {
-            
-            DialogResult result = inlogfont.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                log1.Font = inlogfont.Font;
-            }
-        }
-
         private void getfont()
         {
             string sql = string.Format("select [fname],[fsize],[fstyle] from [setting] where [id] = '{0}'",user.uid);
@@ -134,19 +124,35 @@ namespace Warehouse_Manager
 
         private void font_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string time = dateTimePicker2.Text;
+            string sql = string.Format("insert into [log] values('{0}','{1}') ",time,log3.Text);
+            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
+            if (row == 1)
+            {
+                MessageBox.Show("提交成功");
+            }
+        }
+
+        private void font_Click_1(object sender, EventArgs e)
+        {
             DialogResult result = inlogfont.ShowDialog();
             if (result == DialogResult.OK)
             {
-                this.getfont();
+                
                 string fname = inlogfont.Font.Name;
                 float fsize = inlogfont.Font.Size;
                 string fstyle = inlogfont.Font.Style.ToString();
-                string sqlca = "select count(*) from [setting] where [id] = "+ user.uid;
+                string sqlca = "select count(*) from [setting] where [id] = " + user.uid;
                 int rowca = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlca));
                 if (rowca == 1)
                 {
-                    string sqlup = string.Format("update [setting] set [fname] = '{0}',[fsize]='{1}',[fstyle]='{2}'",fname,fsize,fstyle);
-                    int rowup = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlup) ;
+                    string sqlup = string.Format("update [setting] set [fname] = '{0}',[fsize]='{1}',[fstyle]='{2}' where [id] = '{3}'", fname, fsize, fstyle,user.uid);
+                    int rowup = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlup);
                     if (rowup == 1)
                     {
                         MessageBox.Show("设置已更新");
@@ -162,18 +168,8 @@ namespace Warehouse_Manager
                     }
                 }
             }
-            MessageBox.Show(log1.Font.ToString());
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            string time = dateTimePicker2.Text;
-            string sql = string.Format("insert into [log] values('{0}','{1}') ",time,log3.Text);
-            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
-            if (row == 1)
-            {
-                MessageBox.Show("提交成功");
-            }
+            this.getfont();
+            //MessageBox.Show(log1.Font.ToString());
         }
     }
 }
