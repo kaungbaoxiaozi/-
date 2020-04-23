@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse Manager", "Warehouse Manager.csproj", "{7227BF61-77B4-4E61-A834-7E1C8176D8B3}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "仓库管理系统", "..\仓库管理系统\仓库管理系统.vdproj", "{31EB50EB-8540-42AD-BF6B-7FE81509C92D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallDB", "..\InstallDB\InstallDB.csproj", "{9C450A02-9E6A-47CB-A748-662C587FD889}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,12 @@ Global
 		{7227BF61-77B4-4E61-A834-7E1C8176D8B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7227BF61-77B4-4E61-A834-7E1C8176D8B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7227BF61-77B4-4E61-A834-7E1C8176D8B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31EB50EB-8540-42AD-BF6B-7FE81509C92D}.Debug|Any CPU.ActiveCfg = Debug
+		{31EB50EB-8540-42AD-BF6B-7FE81509C92D}.Release|Any CPU.ActiveCfg = Release
+		{9C450A02-9E6A-47CB-A748-662C587FD889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C450A02-9E6A-47CB-A748-662C587FD889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C450A02-9E6A-47CB-A748-662C587FD889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C450A02-9E6A-47CB-A748-662C587FD889}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

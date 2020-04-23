@@ -417,5 +417,26 @@ namespace Warehouse_Manager
             }
 
         }
+
+        private void 添加产品ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            productadd productadd = new productadd();
+            productadd.Show(this);
+        }
+
+        private void 管理产品ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            productmer productmer = new productmer();
+            productmer.Show(this);
+        }
+
+        private void 刷新ToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            this.prore();
+            this.inre();
+            this.outre();
+            this.spre();
+
+        }
     }
 }

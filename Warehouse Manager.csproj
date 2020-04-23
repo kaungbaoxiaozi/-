@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>主界面.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -91,6 +94,18 @@
     </Compile>
     <Compile Include="outadd.Designer.cs">
       <DependentUpon>outadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="productadd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="productadd.Designer.cs">
+      <DependentUpon>productadd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="productmer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="productmer.Designer.cs">
+      <DependentUpon>productmer.cs</DependentUpon>
     </Compile>
     <Compile Include="spadd.cs">
       <SubType>Form</SubType>
@@ -219,6 +234,12 @@
     <EmbeddedResource Include="outadd.resx">
       <DependentUpon>outadd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="productadd.resx">
+      <DependentUpon>productadd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="productmer.resx">
+      <DependentUpon>productmer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="spadd.resx">
       <DependentUpon>spadd.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +300,7 @@
     <EmbeddedResource Include="test2.resx">
       <DependentUpon>test2.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -333,6 +355,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="主界面.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
