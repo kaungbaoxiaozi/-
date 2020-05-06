@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -44,9 +39,9 @@ namespace Warehouse_Manager
             }
             else
             {
-                string sql = string.Format("insert into [store](name,phone,address,note) values ('{0}','{1}','{2}','{3}')",name.Text,phone.Text,address.Text,note.Text);
+                string sql = string.Format("insert into [store](name,phone,address,note) values ('{0}','{1}','{2}','{3}')", name.Text, phone.Text, address.Text, note.Text);
                 int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
-                if(row == 1)
+                if (row == 1)
                 {
                     MessageBox.Show("录入成功");
                 }

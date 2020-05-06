@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -79,7 +73,7 @@ namespace Warehouse_Manager
                 info[2] = reader["address"].ToString();
                 info[3] = reader["note"].ToString();
             }
-            return info ;
+            return info;
         }
 
         private void id_TextChanged(object sender, EventArgs e)
@@ -93,7 +87,7 @@ namespace Warehouse_Manager
 
         private void debut_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(ids.Text)==false)
+            if (string.IsNullOrWhiteSpace(ids.Text) == false)
             {
                 string sql = string.Format("delete from [sup] where [id] = '{0}'", ids.Text);
                 int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
@@ -111,7 +105,7 @@ namespace Warehouse_Manager
 
         private void editbut_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(id.Text)==false)
+            if (string.IsNullOrWhiteSpace(id.Text) == false)
             {
                 string sql = string.Format("update [sup] set [name] = '{0}',[phone] = '{1}',[address] = '{2}',[note] = '{3}' where [id] = '{4}'", name.Text, phone.Text, address.Text, note.Text, id.Text);
                 int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);

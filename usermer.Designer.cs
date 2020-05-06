@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.userlist = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,13 +46,27 @@
             this.inname = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbut = new System.Windows.Forms.Button();
+            this.cx = new System.Windows.Forms.TextBox();
+            this.tj = new System.Windows.Forms.ComboBox();
             this.inpwds = new System.Windows.Forms.TextBox();
             this.inpwd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tj = new System.Windows.Forms.ComboBox();
-            this.cx = new System.Windows.Forms.TextBox();
-            this.cbut = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.wMSDataSet = new Warehouse_Manager.WMSDataSet();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.userTableAdapter();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // userlist
@@ -73,6 +88,7 @@
             this.userlist.TabIndex = 0;
             this.userlist.UseCompatibleStateImageBehavior = false;
             this.userlist.View = System.Windows.Forms.View.Details;
+            this.userlist.Click += new System.EventHandler(this.userlist_Click);
             // 
             // columnHeader1
             // 
@@ -136,7 +152,7 @@
             // 
             this.upid.Location = new System.Drawing.Point(71, 41);
             this.upid.Name = "upid";
-            this.upid.Size = new System.Drawing.Size(120, 21);
+            this.upid.Size = new System.Drawing.Size(121, 21);
             this.upid.TabIndex = 4;
             // 
             // label1
@@ -161,7 +177,7 @@
             // 
             this.deid.Location = new System.Drawing.Point(71, 135);
             this.deid.Name = "deid";
-            this.deid.Size = new System.Drawing.Size(100, 21);
+            this.deid.Size = new System.Drawing.Size(121, 21);
             this.deid.TabIndex = 7;
             // 
             // button3
@@ -176,14 +192,14 @@
             // 
             // inname
             // 
-            this.inname.Location = new System.Drawing.Point(71, 205);
+            this.inname.Location = new System.Drawing.Point(71, 206);
             this.inname.Name = "inname";
-            this.inname.Size = new System.Drawing.Size(100, 21);
+            this.inname.Size = new System.Drawing.Size(121, 21);
             this.inname.TabIndex = 9;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(71, 288);
+            this.button4.Location = new System.Drawing.Point(71, 289);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 10;
@@ -193,12 +209,21 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cbut);
             this.panel1.Controls.Add(this.cx);
             this.panel1.Controls.Add(this.tj);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.inpwds);
             this.panel1.Controls.Add(this.inpwd);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.inname);
             this.panel1.Controls.Add(this.label1);
@@ -214,47 +239,9 @@
             this.panel1.Size = new System.Drawing.Size(650, 431);
             this.panel1.TabIndex = 11;
             // 
-            // inpwds
-            // 
-            this.inpwds.Location = new System.Drawing.Point(71, 261);
-            this.inpwds.Name = "inpwds";
-            this.inpwds.Size = new System.Drawing.Size(100, 21);
-            this.inpwds.TabIndex = 11;
-            // 
-            // inpwd
-            // 
-            this.inpwd.Location = new System.Drawing.Point(71, 233);
-            this.inpwd.Name = "inpwd";
-            this.inpwd.Size = new System.Drawing.Size(100, 21);
-            this.inpwd.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 190);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 12);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "添加用户:";
-            // 
-            // tj
-            // 
-            this.tj.FormattingEnabled = true;
-            this.tj.Location = new System.Drawing.Point(71, 333);
-            this.tj.Name = "tj";
-            this.tj.Size = new System.Drawing.Size(121, 20);
-            this.tj.TabIndex = 12;
-            // 
-            // cx
-            // 
-            this.cx.Location = new System.Drawing.Point(71, 360);
-            this.cx.Name = "cx";
-            this.cx.Size = new System.Drawing.Size(100, 21);
-            this.cx.TabIndex = 13;
-            // 
             // cbut
             // 
-            this.cbut.Location = new System.Drawing.Point(71, 388);
+            this.cbut.Location = new System.Drawing.Point(71, 392);
             this.cbut.Name = "cbut";
             this.cbut.Size = new System.Drawing.Size(75, 23);
             this.cbut.TabIndex = 14;
@@ -262,7 +249,144 @@
             this.cbut.UseVisualStyleBackColor = true;
             this.cbut.Click += new System.EventHandler(this.cbut_Click);
             // 
-            // cuser
+            // cx
+            // 
+            this.cx.Location = new System.Drawing.Point(71, 364);
+            this.cx.Name = "cx";
+            this.cx.Size = new System.Drawing.Size(100, 21);
+            this.cx.TabIndex = 13;
+            // 
+            // tj
+            // 
+            this.tj.FormattingEnabled = true;
+            this.tj.Items.AddRange(new object[] {
+            "账号",
+            "权限",
+            "姓名"});
+            this.tj.Location = new System.Drawing.Point(71, 337);
+            this.tj.Name = "tj";
+            this.tj.Size = new System.Drawing.Size(121, 20);
+            this.tj.TabIndex = 12;
+            // 
+            // inpwds
+            // 
+            this.inpwds.Location = new System.Drawing.Point(71, 262);
+            this.inpwds.Name = "inpwds";
+            this.inpwds.Size = new System.Drawing.Size(121, 21);
+            this.inpwds.TabIndex = 11;
+            // 
+            // inpwd
+            // 
+            this.inpwd.Location = new System.Drawing.Point(71, 234);
+            this.inpwd.Name = "inpwd";
+            this.inpwd.Size = new System.Drawing.Size(121, 21);
+            this.inpwd.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(62, 191);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 12);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "添加用户:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "账号：";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 138);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 12);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "账号：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 209);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "姓名：";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(24, 340);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "条件：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 71);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 12);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "权限：";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 237);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "密码：";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 265);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "确认密码：";
+            // 
+            // wMSDataSet
+            // 
+            this.wMSDataSet.DataSetName = "WMSDataSet";
+            this.wMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "user";
+            this.userBindingSource.DataSource = this.wMSDataSet;
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(24, 367);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "内容：";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(62, 322);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(59, 12);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "查询用户:";
+            // 
+            // usermer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,7 +396,7 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "cuser";
+            this.Name = "usermer";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "管理用户";
@@ -280,6 +404,8 @@
             this.Load += new System.EventHandler(this.listviewtest_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +434,17 @@
         private System.Windows.Forms.Button cbut;
         private System.Windows.Forms.TextBox cx;
         private System.Windows.Forms.ComboBox tj;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private WMSDataSet wMSDataSet;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private WMSDataSetTableAdapters.userTableAdapter userTableAdapter;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

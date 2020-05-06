@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
-using System.Web;
 using System.Collections;
+using System.Data;
 using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 
 /// <summary>
 /// 数据库的通用访问代码

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -37,7 +31,7 @@ namespace Warehouse_Manager
 
         private void inbut_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(number.Text) == false || string.IsNullOrWhiteSpace(spname.Text) == false || string.IsNullOrWhiteSpace(pname.Text) == false)
+            if (number.Value != 0 & string.IsNullOrWhiteSpace(spname.Text) == false & string.IsNullOrWhiteSpace(pname.Text) == false)
             {
                 string time = Myhelper.Gettime();
                 int spid = Myhelper.Getspidbyname(spname.Text);
@@ -53,6 +47,10 @@ namespace Warehouse_Manager
                         this.inTableAdapter.Fill(this.wMSDataSet._in);
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("出库失败，请检查：\n1：入库数量是否为'0'\n2：供应商名称与产品名称是否正确填写");
             }
         }
     }

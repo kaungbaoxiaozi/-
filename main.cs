@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -244,6 +238,21 @@ namespace Warehouse_Manager
             {
                 warinfo.Text = "注意:目前有" + row.ToString() + "件商品缺货";
             }
+            string sqlwaring = string.Format("select [name] from [product] where [stock] <= '{0}'",warning);
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr,CommandType.Text,sqlwaring);
+            string[] vs = new string[row];
+            //while(reader.Read())
+            //{
+                for (int i = 0;i<vs.Length;i++)
+                {
+                if (reader.Read())
+                {
+                    vs[i] = reader["name"].ToString();
+                }
+                    
+                }
+           // }
+            user.warings = vs;
         }
 
         private void 条件查询ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -437,6 +446,68 @@ namespace Warehouse_Manager
             this.outre();
             this.spre();
 
+        }
+
+        private void main_SizeChanged(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Hide();
+                this.myicon.Visible = true;
+            }
+        }
+
+        private void myicon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void 播放暂停ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            switch (Convert.ToInt32(myplayer.playState))
+            {
+                case 3:
+                    myplayer.Ctlcontrols.pause();
+                    break;
+                case 2:
+                    myplayer.Ctlcontrols.play();
+                    break;
+            }
+        }
+
+        private void 显示主界面ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void warinfo_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(warinfo.Text)==false)
+            {
+                string info = "当前缺货产品：";
+                foreach (string i in user.warings)
+                {
+                    info = info + " || "+ i+" || ";
+                }
+                MessageBox.Show(info);
+            }
+            else
+            {
+              
+            }
+        }
+
+        private void 指南ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            helper helper = new helper();
+            helper.ShowDialog(this);
         }
     }
 }

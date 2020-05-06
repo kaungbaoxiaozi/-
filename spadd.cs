@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -34,8 +28,8 @@ namespace Warehouse_Manager
 
         private void addbut_Click(object sender, EventArgs e)
         {
-            
-            if (string.IsNullOrWhiteSpace(name.Text)==false)
+
+            if (string.IsNullOrWhiteSpace(name.Text) == false)
             {
                 int row = Insert(name.Text, address.Text, phone.Text, note.Text);
                 if (row == 1)
@@ -46,9 +40,9 @@ namespace Warehouse_Manager
             }
         }
 
-        public static int Insert(string name,string address,string phone,string note)
+        public static int Insert(string name, string address, string phone, string note)
         {
-            string sql = string.Format("insert into [sup] ([name],[address],[phone],[note]) values('{0}','{1}','{2}','{3}') ",name,address,phone,note);
+            string sql = string.Format("insert into [sup] ([name],[address],[phone],[note]) values('{0}','{1}','{2}','{3}') ", name, address, phone, note);
             int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
             return row;
         }

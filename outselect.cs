@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -36,7 +29,7 @@ namespace Warehouse_Manager
             {
                 this.outTableAdapter.byname(this.wMSDataSet._out, snamecom.Text);
             }
-            catch(System.Exception ex)
+            catch (System.Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -47,7 +40,7 @@ namespace Warehouse_Manager
             try
             {
                 string time = "'" + dateTimePicker1.Text + "'";
-                this.outTableAdapter.bytime(this.wMSDataSet._out,time);
+                this.outTableAdapter.bytime(this.wMSDataSet._out, time);
             }
             catch (System.Exception ex)
             {
@@ -85,7 +78,7 @@ namespace Warehouse_Manager
         {
             try
             {
-                this.outTableAdapter.bysname_pname(this.wMSDataSet._out,dsname.Text, dpname.Text);
+                this.outTableAdapter.bysname_pname(this.wMSDataSet._out, dsname.Text, dpname.Text);
             }
             catch (System.Exception ex)
             {

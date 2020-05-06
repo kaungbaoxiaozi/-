@@ -42,6 +42,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.runbut = new System.Windows.Forms.Button();
+            this.infolabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -60,7 +62,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(469, 281);
+            this.tabControl1.Size = new System.Drawing.Size(470, 277);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             // 
@@ -79,7 +81,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(396, 273);
+            this.tabPage1.Size = new System.Drawing.Size(397, 269);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "常规设置";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -147,7 +149,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(301, 240);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(304, 241);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 24);
@@ -175,34 +178,58 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.infolabel);
+            this.tabPage2.Controls.Add(this.runbut);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Location = new System.Drawing.Point(69, 4);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(396, 273);
+            this.tabPage2.Size = new System.Drawing.Size(397, 269);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 75);
+            this.label5.Location = new System.Drawing.Point(6, 76);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "*这里什么都没有";
+            this.label5.DoubleClick += new System.EventHandler(this.label5_DoubleClick);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // runbut
+            // 
+            this.runbut.Location = new System.Drawing.Point(109, 73);
+            this.runbut.Name = "runbut";
+            this.runbut.Size = new System.Drawing.Size(75, 23);
+            this.runbut.TabIndex = 1;
+            this.runbut.Text = "删库跑路";
+            this.runbut.UseVisualStyleBackColor = true;
+            this.runbut.Visible = false;
+            this.runbut.Click += new System.EventHandler(this.runbut_Click);
+            // 
+            // infolabel
+            // 
+            this.infolabel.AutoSize = true;
+            this.infolabel.Location = new System.Drawing.Point(106, 99);
+            this.infolabel.Name = "infolabel";
+            this.infolabel.Size = new System.Drawing.Size(246, 17);
+            this.infolabel.TabIndex = 2;
+            this.infolabel.Text = "*删除出库，入库，终端，产品表的所有记录*";
+            this.infolabel.Visible = false;
+            // 
             // setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 281);
+            this.ClientSize = new System.Drawing.Size(470, 277);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -238,5 +265,7 @@
         private System.Windows.Forms.Button choosebgm;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button runbut;
+        private System.Windows.Forms.Label infolabel;
     }
 }

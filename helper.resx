@@ -117,13 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="wMSDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="userBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>144, 17</value>
-  </metadata>
-  <metadata name="userTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>306, 17</value>
-  </metadata>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Q：我忘记了我的密码怎么办？
+A：暂时不支持找回密码的功能，后续可能会加上”密保问题“这种方式找回密码；
+
+Q：首次使用本软件我应该做什么？
+A：在进行入库/出库操作之前，你需要录入仓库的相关信息（代理产品，供应商，商家信息等）
+
+Q：软件卡死怎么办？
+A：按住"WIN+X ➡ T" 快捷键，打开任务管理器，结束名为”Warehouse Manager.exe“的相关进程
+
+Q：我能确保我的仓库信息的安全吗？
+A：不能！
+
+Q:为什么主界面的音乐播放器不能播放外文（韩文）歌曲？
+A:因为数据库目前似乎无法保存韩文，韩文保存在数据库中显示为”？“，登录后读取数据库，无法找到文件路径
+
+Q:为什么写了这么个Q&amp;A，仿佛会有别的人用你的软件一样？
+A:害~ 就图一乐 </value>
+  </data>
 </root>

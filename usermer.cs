@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -20,6 +14,8 @@ namespace Warehouse_Manager
 
         private void listviewtest_Load(object sender, EventArgs e)
         {
+            // TODO: 这行代码将数据加载到表“wMSDataSet.user”中。您可以根据需要移动或删除它。
+            this.userTableAdapter.Fill(this.wMSDataSet.user);
             try
             {
                 string sqlc = string.Format("SELECT * FROM [USER]");
@@ -78,21 +74,21 @@ namespace Warehouse_Manager
         private void button2_Click(object sender, EventArgs e)
         {
 
-            string sqlup = string.Format("update [user] set [power] = '{0}' where id = '{1}'", uppower.Text,upid.Text);
-            SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sqlup);
+            string sqlup = string.Format("update [user] set [power] = '{0}' where id = '{1}'", uppower.Text, upid.Text);
+            SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlup);
             MessageBox.Show("修改成功");
-          
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             string sqlde = string.Format("delete from [user] where [id] = '{0}'", deid.Text);
-            SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sqlde);
+            SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlde);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string sqlin = string.Format("INSERT INTO [user] (password,name) VALUES ('{0}','{1}')",inpwd.Text,inname.Text);
+            string sqlin = string.Format("INSERT INTO [user] (password,name) VALUES ('{0}','{1}')", inpwd.Text, inname.Text);
             SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlin);
             MessageBox.Show("添加成功");
         }
@@ -100,7 +96,7 @@ namespace Warehouse_Manager
         private void cbut_Click(object sender, EventArgs e)
         {
             string tjt = tj.Text;
-            string cxtj=null;
+            string cxtj = null;
             switch (tjt)
             {
                 case "账号":
@@ -109,16 +105,19 @@ namespace Warehouse_Manager
                 case "姓名":
                     cxtj = "name";
                     break;
+                case "权限":
+                    cxtj = "power";
+                    break;
             }
             //*********************************************************************************************
             try
             {
                 userlist.Items.Clear();
-                string sqlca = string.Format("select * from [user] where '{0}' = '{1}' ", cxtj, cx.Text);
+                string sqlca = string.Format("select * from [user] where [{0}] = '{1}' ", cxtj, cx.Text);
                 SqlDataReader sqlreader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
                 string sqlrow = string.Format("SELECT COUNT(*) FROM [USER]");
                 int row = (int)SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlrow);//返还第一条第一列的数据 多用行数查询
-                for (int i = 0; i <= 0; i++)
+                for (int i = 0; i <= row; i++)
                 {
                     if (sqlreader.Read())
                     {
@@ -135,6 +134,12 @@ namespace Warehouse_Manager
             {
                 MessageBox.Show("出现错误，请重试", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);//常用参数：（"弹窗内容","标题",按钮类型,图标类型,==DialogResul.ok(可用判断)）
             }
+        }
+
+        private void userlist_Click(object sender, EventArgs e)
+        {
+            int index = userlist.Columns.Count;
+
         }
     }
 }

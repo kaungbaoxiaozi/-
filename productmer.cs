@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Warehouse_Manager
 {
@@ -35,8 +29,8 @@ namespace Warehouse_Manager
         private void id_TextChanged(object sender, EventArgs e)
         {
 
-            string sql = string.Format("select * from [product] where [id] = '{0}'",id.Text);
-            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr,CommandType.Text,sql);
+            string sql = string.Format("select * from [product] where [id] = '{0}'", id.Text);
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sql);
             while (reader.Read())
             {
                 name.Text = reader["onlyname"].ToString();
@@ -56,7 +50,7 @@ namespace Warehouse_Manager
                     MessageBox.Show("删除成功");
                     this.productTableAdapter.Fill(this.wMSDataSet.product);
                     this.clear();
-                } 
+                }
             }
         }
 
@@ -77,7 +71,7 @@ namespace Warehouse_Manager
             if (string.IsNullOrWhiteSpace(id.Text) == false)
             {
                 string nameformat = string.Format("{0}({1})", name.Text, format.Text);
-                string sql = string.Format("update [product] set [onlyname] = '{0}',[stock] = '{1}',[format] = '{2}',[name] = '{3}' where [id] = '{4}'", name.Text, stock.Text,format.Text, nameformat,id.Text);
+                string sql = string.Format("update [product] set [onlyname] = '{0}',[stock] = '{1}',[format] = '{2}',[name] = '{3}' where [id] = '{4}'", name.Text, stock.Text, format.Text, nameformat, id.Text);
                 int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
                 if (row == 1)
                 {

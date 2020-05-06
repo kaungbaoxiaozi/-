@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -22,7 +16,7 @@ namespace Warehouse_Manager
             string opwdt = opwd.Text;
             string npwdt = npwd.Text;
             string npwdst = npwds.Text;
-            if(opwdt == user.upwd)
+            if (opwdt == user.upwd)
             {
                 if (npwdt != npwdst)
                 {
@@ -39,13 +33,13 @@ namespace Warehouse_Manager
                     }
                     catch
                     {
-                        MessageBox.Show("暂时无法更改密码请重试","错误",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("暂时无法更改密码请重试", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("我不知道你是谁？","错误",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("我不知道你是谁？", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

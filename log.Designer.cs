@@ -58,6 +58,7 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.inlog.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -130,7 +131,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(594, 302);
+            this.tabControl1.Size = new System.Drawing.Size(602, 302);
             this.tabControl1.TabIndex = 7;
             // 
             // inlog
@@ -159,6 +160,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.change);
             this.tabPage2.Controls.Add(this.log2);
             this.tabPage2.Controls.Add(this.select);
@@ -166,7 +168,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(586, 276);
+            this.tabPage2.Size = new System.Drawing.Size(594, 276);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "查看/修改日志";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -189,7 +191,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(586, 276);
+            this.tabPage1.Size = new System.Drawing.Size(594, 276);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "指定提交";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -231,7 +233,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(586, 276);
+            this.tabPage3.Size = new System.Drawing.Size(594, 276);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "设置";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -319,10 +321,10 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.time,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 298);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 305);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 15, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(594, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(602, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -348,11 +350,21 @@
             // 
             this.timer2.Interval = 1000;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(302, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(22, 22);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "?";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 320);
+            this.ClientSize = new System.Drawing.Size(602, 327);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -394,8 +406,6 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel time;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox log3;
         private System.Windows.Forms.TabPage tabPage3;
@@ -407,5 +417,8 @@
         private System.Windows.Forms.RadioButton m1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button button2;
     }
 }

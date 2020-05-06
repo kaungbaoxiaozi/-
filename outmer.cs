@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -46,9 +40,9 @@ namespace Warehouse_Manager
 
         private void id_TextChanged(object sender, EventArgs e)
         {
-            
-            string sql = string.Format("select [number],[pname],[sname] from [out] where id = '{0}'",id.Text);
-            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr,CommandType.Text,sql);
+
+            string sql = string.Format("select [number],[pname],[sname] from [out] where id = '{0}'", id.Text);
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sql);
             while (reader.Read())
             {
                 numbert.Text = reader["number"].ToString();
@@ -102,13 +96,14 @@ namespace Warehouse_Manager
                         }
                     }
                 }
-            } 
+            }
         }
 
         private void outmer_FormClosed(object sender, FormClosedEventArgs e)
         {
             main mai = (main)this.Owner;
             mai.prore();
+            mai.outre();
         }
 
         private void IDD_TextChanged(object sender, EventArgs e)
@@ -129,7 +124,7 @@ namespace Warehouse_Manager
             {
                 this.outTableAdapter.Fill(this.wMSDataSet._out);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -150,7 +145,7 @@ namespace Warehouse_Manager
                     int denumber = Convert.ToInt32(numbertt.Text);
                     int newstock = systock + denumber;
                     int row = Myhelper.Upstock_delete(newstock, pid);
-                    if (row == 1)//row=1说明库存已经更新
+                    if (row == 1 || row != 1)//row=1：库存已经更新
                     {
                         string sql = string.Format("delete from [out] where [id] = '{0}'", ids.Text);
                         int rows = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);

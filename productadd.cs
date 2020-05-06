@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -26,9 +21,9 @@ namespace Warehouse_Manager
 
         private void add_Click(object sender, EventArgs e)
         {
-            string nameformat = string.Format("{0}({1})",name.Text,format.Text);
-            string sql = string.Format("insert into [product] ([name],[format],[onlyname]) values('{0}','{1}','{2}')",nameformat,format.Text,name.Text);
-            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
+            string nameformat = string.Format("{0}({1})", name.Text, format.Text);
+            string sql = string.Format("insert into [product] ([name],[format],[onlyname]) values('{0}','{1}','{2}')", nameformat, format.Text, name.Text);
+            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
             if (row == 1)
             {
                 MessageBox.Show("添加成功");
@@ -44,7 +39,7 @@ namespace Warehouse_Manager
 
         private void productadd_HelpButtonClicked(object sender, CancelEventArgs e)
         {
-            MessageBox.Show("添加产品后，库存默认为零（0），如需添加库存，需要在入库管理模块另行添加","指南",MessageBoxButtons.OK,MessageBoxIcon.Information); 
+            MessageBox.Show("添加产品后，库存默认为零（0），如需添加库存，需要在入库管理模块另行添加", "指南", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

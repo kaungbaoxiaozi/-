@@ -61,6 +61,7 @@
             this.作者说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.开发日志ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panelname = new System.Windows.Forms.ToolStripStatusLabel();
             this.timess = new System.Windows.Forms.ToolStripStatusLabel();
@@ -120,8 +121,12 @@
             this.supTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.supTableAdapter();
             this.warning = new System.Windows.Forms.Timer(this.components);
             this.inTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.inTableAdapter();
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.myicon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.myicontext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.显示主界面ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.播放暂停ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.指南ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.propa.SuspendLayout();
@@ -144,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).BeginInit();
+            this.myicontext.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -276,19 +282,19 @@
             // 录入ToolStripMenuItem
             // 
             this.录入ToolStripMenuItem.Name = "录入ToolStripMenuItem";
-            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.录入ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.录入ToolStripMenuItem.Text = "录入终端信息";
             this.录入ToolStripMenuItem.Click += new System.EventHandler(this.录入ToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
             // 
             // 更新终端信息ToolStripMenuItem
             // 
             this.更新终端信息ToolStripMenuItem.Name = "更新终端信息ToolStripMenuItem";
-            this.更新终端信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.更新终端信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.更新终端信息ToolStripMenuItem.Text = "维护终端信息";
             this.更新终端信息ToolStripMenuItem.Click += new System.EventHandler(this.更新终端信息ToolStripMenuItem_Click);
             // 
@@ -306,19 +312,19 @@
             // 添加入库记录ToolStripMenuItem
             // 
             this.添加入库记录ToolStripMenuItem.Name = "添加入库记录ToolStripMenuItem";
-            this.添加入库记录ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.添加入库记录ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.添加入库记录ToolStripMenuItem.Text = "添加入库记录";
             this.添加入库记录ToolStripMenuItem.Click += new System.EventHandler(this.添加入库记录ToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // 更新出库记录ToolStripMenuItem1
             // 
             this.更新出库记录ToolStripMenuItem1.Name = "更新出库记录ToolStripMenuItem1";
-            this.更新出库记录ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.更新出库记录ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.更新出库记录ToolStripMenuItem1.Text = "管理入库记录";
             this.更新出库记录ToolStripMenuItem1.Click += new System.EventHandler(this.更新出库记录ToolStripMenuItem1_Click);
             // 
@@ -336,19 +342,19 @@
             // 添加供应商ToolStripMenuItem
             // 
             this.添加供应商ToolStripMenuItem.Name = "添加供应商ToolStripMenuItem";
-            this.添加供应商ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.添加供应商ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.添加供应商ToolStripMenuItem.Text = "添加供应商信息";
             this.添加供应商ToolStripMenuItem.Click += new System.EventHandler(this.添加供应商ToolStripMenuItem_Click);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(157, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
             // 
             // 维护供应商信息ToolStripMenuItem
             // 
             this.维护供应商信息ToolStripMenuItem.Name = "维护供应商信息ToolStripMenuItem";
-            this.维护供应商信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.维护供应商信息ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.维护供应商信息ToolStripMenuItem.Text = "维护供应商信息";
             this.维护供应商信息ToolStripMenuItem.Click += new System.EventHandler(this.维护供应商信息ToolStripMenuItem_Click);
             // 
@@ -365,7 +371,8 @@
             this.作者说明ToolStripMenuItem,
             this.toolStripSeparator6,
             this.开发日志ToolStripMenuItem,
-            this.刷新ToolStripMenuItem});
+            this.刷新ToolStripMenuItem,
+            this.指南ToolStripMenuItem});
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
             this.关于ToolStripMenuItem.Text = "关于(&G)";
@@ -373,21 +380,28 @@
             // 作者说明ToolStripMenuItem
             // 
             this.作者说明ToolStripMenuItem.Name = "作者说明ToolStripMenuItem";
-            this.作者说明ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.作者说明ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.作者说明ToolStripMenuItem.Text = "作者说明";
             this.作者说明ToolStripMenuItem.Click += new System.EventHandler(this.作者说明ToolStripMenuItem_Click);
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(121, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(177, 6);
             // 
             // 开发日志ToolStripMenuItem
             // 
             this.开发日志ToolStripMenuItem.Name = "开发日志ToolStripMenuItem";
-            this.开发日志ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.开发日志ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.开发日志ToolStripMenuItem.Text = "开发日志";
             this.开发日志ToolStripMenuItem.Click += new System.EventHandler(this.开发日志ToolStripMenuItem_Click);
+            // 
+            // 刷新ToolStripMenuItem
+            // 
+            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.刷新ToolStripMenuItem.Text = "刷新";
+            this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click_1);
             // 
             // statusStrip1
             // 
@@ -420,6 +434,7 @@
             this.warinfo.Name = "warinfo";
             this.warinfo.Size = new System.Drawing.Size(442, 20);
             this.warinfo.Spring = true;
+            this.warinfo.Click += new System.EventHandler(this.warinfo_Click);
             // 
             // namess
             // 
@@ -530,49 +545,49 @@
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "入库编号";
             this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
             this.idDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // numberDataGridViewTextBoxColumn1
             // 
             this.numberDataGridViewTextBoxColumn1.DataPropertyName = "number";
-            this.numberDataGridViewTextBoxColumn1.HeaderText = "number";
+            this.numberDataGridViewTextBoxColumn1.HeaderText = "数量";
             this.numberDataGridViewTextBoxColumn1.Name = "numberDataGridViewTextBoxColumn1";
             this.numberDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // pnameDataGridViewTextBoxColumn1
             // 
             this.pnameDataGridViewTextBoxColumn1.DataPropertyName = "pname";
-            this.pnameDataGridViewTextBoxColumn1.HeaderText = "pname";
+            this.pnameDataGridViewTextBoxColumn1.HeaderText = "产品名";
             this.pnameDataGridViewTextBoxColumn1.Name = "pnameDataGridViewTextBoxColumn1";
             this.pnameDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // spnameDataGridViewTextBoxColumn
             // 
             this.spnameDataGridViewTextBoxColumn.DataPropertyName = "spname";
-            this.spnameDataGridViewTextBoxColumn.HeaderText = "spname";
+            this.spnameDataGridViewTextBoxColumn.HeaderText = "供应商名称";
             this.spnameDataGridViewTextBoxColumn.Name = "spnameDataGridViewTextBoxColumn";
             this.spnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // spidDataGridViewTextBoxColumn
             // 
             this.spidDataGridViewTextBoxColumn.DataPropertyName = "spid";
-            this.spidDataGridViewTextBoxColumn.HeaderText = "spid";
+            this.spidDataGridViewTextBoxColumn.HeaderText = "供应商编号";
             this.spidDataGridViewTextBoxColumn.Name = "spidDataGridViewTextBoxColumn";
             this.spidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // intimeDataGridViewTextBoxColumn
             // 
             this.intimeDataGridViewTextBoxColumn.DataPropertyName = "intime";
-            this.intimeDataGridViewTextBoxColumn.HeaderText = "intime";
+            this.intimeDataGridViewTextBoxColumn.HeaderText = "入库时间";
             this.intimeDataGridViewTextBoxColumn.Name = "intimeDataGridViewTextBoxColumn";
             this.intimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // uidDataGridViewTextBoxColumn1
             // 
             this.uidDataGridViewTextBoxColumn1.DataPropertyName = "uid";
-            this.uidDataGridViewTextBoxColumn1.HeaderText = "uid";
+            this.uidDataGridViewTextBoxColumn1.HeaderText = "操作员";
             this.uidDataGridViewTextBoxColumn1.Name = "uidDataGridViewTextBoxColumn1";
             this.uidDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
@@ -871,18 +886,51 @@
             // 
             this.inTableAdapter.ClearBeforeFill = true;
             // 
-            // timer2
+            // myicon
             // 
-            this.timer2.Enabled = true;
-            this.timer2.Interval = 1000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.myicon.ContextMenuStrip = this.myicontext;
+            this.myicon.Icon = ((System.Drawing.Icon)(resources.GetObject("myicon.Icon")));
+            this.myicon.Text = "仓库管理系统";
+            this.myicon.Visible = true;
+            this.myicon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.myicon_MouseDoubleClick);
             // 
-            // 刷新ToolStripMenuItem
+            // myicontext
             // 
-            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
-            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.刷新ToolStripMenuItem.Text = "刷新";
-            this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click_1);
+            this.myicontext.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.显示主界面ToolStripMenuItem,
+            this.播放暂停ToolStripMenuItem,
+            this.退出ToolStripMenuItem});
+            this.myicontext.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
+            this.myicontext.Name = "myicontext";
+            this.myicontext.Size = new System.Drawing.Size(137, 70);
+            // 
+            // 显示主界面ToolStripMenuItem
+            // 
+            this.显示主界面ToolStripMenuItem.Name = "显示主界面ToolStripMenuItem";
+            this.显示主界面ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.显示主界面ToolStripMenuItem.Text = "显示主界面";
+            this.显示主界面ToolStripMenuItem.Click += new System.EventHandler(this.显示主界面ToolStripMenuItem_Click);
+            // 
+            // 播放暂停ToolStripMenuItem
+            // 
+            this.播放暂停ToolStripMenuItem.Name = "播放暂停ToolStripMenuItem";
+            this.播放暂停ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.播放暂停ToolStripMenuItem.Text = "播放/暂停";
+            this.播放暂停ToolStripMenuItem.Click += new System.EventHandler(this.播放暂停ToolStripMenuItem_Click);
+            // 
+            // 退出ToolStripMenuItem
+            // 
+            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.退出ToolStripMenuItem.Text = "退出";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+            // 
+            // 指南ToolStripMenuItem
+            // 
+            this.指南ToolStripMenuItem.Name = "指南ToolStripMenuItem";
+            this.指南ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.指南ToolStripMenuItem.Text = "指南";
+            this.指南ToolStripMenuItem.Click += new System.EventHandler(this.指南ToolStripMenuItem_Click);
             // 
             // main
             // 
@@ -904,6 +952,7 @@
             this.Text = "主界面";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.main_FormClosing);
             this.Load += new System.EventHandler(this.main_Load);
+            this.SizeChanged += new System.EventHandler(this.main_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -928,6 +977,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.storeBindingSource)).EndInit();
+            this.myicontext.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1014,6 +1064,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noteDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource inBindingSource;
         private WMSDataSetTableAdapters.inTableAdapter inTableAdapter;
+        private AxWMPLib.AxWindowsMediaPlayer myplayer;
+        private System.Windows.Forms.ToolStripMenuItem 添加产品ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 管理产品ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
+        private System.Windows.Forms.NotifyIcon myicon;
+        private System.Windows.Forms.ContextMenuStrip myicontext;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 播放暂停ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 显示主界面ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn pnameDataGridViewTextBoxColumn1;
@@ -1021,10 +1080,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn spidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn intimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uidDataGridViewTextBoxColumn1;
-        private AxWMPLib.AxWindowsMediaPlayer myplayer;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.ToolStripMenuItem 添加产品ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 管理产品ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 指南ToolStripMenuItem;
     }
 }

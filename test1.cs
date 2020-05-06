@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -72,12 +67,12 @@ namespace Warehouse_Manager
                 float fontsize = fontDialog1.Font.Size;
                 string fontstyle = fontDialog1.Font.Style.ToString();
                 FontStyle fontS = (FontStyle)Enum.Parse(typeof(FontStyle), fontstyle, false);
-                richTextBox1.Font = new Font(fontname, fontsize,fontS);//定义新的字体格式,对应数据1，字体格式（string）
+                richTextBox1.Font = new Font(fontname, fontsize, fontS);//定义新的字体格式,对应数据1，字体格式（string）
                 //public Font (string familyName, float emSize, System.Drawing.FontStyle style);
                 //string myString = FontStyle.Bold.ToString();
                 //FontStyle myFontStyle = (FontStyle)Enum.Parse(typeof(FontStyle), myString, false);
             }
-            
+
         }
 
         private void toolStripLabel1_Click(object sender, EventArgs e)

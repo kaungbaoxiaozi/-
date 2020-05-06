@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -20,6 +15,7 @@ namespace Warehouse_Manager
 
         private void about_Load(object sender, EventArgs e)
         {
+           
             this.getfont();
             time.Text = DateTime.Now.ToLongDateString().ToString();
             string nowtime = DateTime.Now.ToLongDateString().ToString();
@@ -44,8 +40,8 @@ namespace Warehouse_Manager
             }
             else
             {
-                string sqlca = string.Format("select logt from [log] where time = '{0}'",nowtime);
-                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr,CommandType.Text,sqlca);
+                string sqlca = string.Format("select logt from [log] where time = '{0}'", nowtime);
+                SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
                 if (reader.HasRows)
                 {
                     MessageBox.Show("你已经写过日志了,若需要修改改请移步➡");
@@ -76,7 +72,7 @@ namespace Warehouse_Manager
             }
             else
             {
-                MessageBox.Show("所选日期无日志！","无日志", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("所选日期无日志！", "无日志", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -87,7 +83,7 @@ namespace Warehouse_Manager
 
         private void change_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("确定提交吗？","",MessageBoxButtons.OKCancel,MessageBoxIcon.Question) == DialogResult.OK)
+            if (MessageBox.Show("确定提交吗？", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
                 string logt = log2.Text;
                 string times = dateTimePicker1.Text;
@@ -100,22 +96,22 @@ namespace Warehouse_Manager
                 else
                 {
                     MessageBox.Show("修改失败");
-                } 
+                }
             }
         }
 
         private void getfont()
         {
-            string sql = string.Format("select [fname],[fsize],[fstyle] from [setting] where [id] = '{0}'",user.uid);
+            string sql = string.Format("select [fname],[fsize],[fstyle] from [setting] where [id] = '{0}'", user.uid);
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sql);
             while (reader.Read())
             {
                 string fname = reader["fname"].ToString();
                 string fsize = reader["fsize"].ToString();
                 float fsizef = float.Parse(fsize);
-                string fontstyle = reader["fstyle"].ToString(); 
+                string fontstyle = reader["fstyle"].ToString();
                 FontStyle fstyle = (FontStyle)Enum.Parse(typeof(FontStyle), fontstyle, false);
-                Font myfont = new Font(fname,fsizef,fstyle);
+                Font myfont = new Font(fname, fsizef, fstyle);
                 log1.Font = myfont;
                 log2.Font = myfont;
                 log3.Font = myfont;
@@ -130,8 +126,8 @@ namespace Warehouse_Manager
         private void button1_Click_1(object sender, EventArgs e)
         {
             string time = dateTimePicker2.Text;
-            string sql = string.Format("insert into [log] values('{0}','{1}') ",time,log3.Text);
-            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
+            string sql = string.Format("insert into [log] values('{0}','{1}') ", time, log3.Text);
+            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
             if (row == 1)
             {
                 MessageBox.Show("提交成功");
@@ -143,7 +139,7 @@ namespace Warehouse_Manager
             DialogResult result = inlogfont.ShowDialog();
             if (result == DialogResult.OK)
             {
-                
+
                 string fname = inlogfont.Font.Name;
                 float fsize = inlogfont.Font.Size;
                 string fstyle = inlogfont.Font.Style.ToString();
@@ -151,7 +147,7 @@ namespace Warehouse_Manager
                 int rowca = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlca));
                 if (rowca == 1)
                 {
-                    string sqlup = string.Format("update [setting] set [fname] = '{0}',[fsize]='{1}',[fstyle]='{2}' where [id] = '{3}'", fname, fsize, fstyle,user.uid);
+                    string sqlup = string.Format("update [setting] set [fname] = '{0}',[fsize]='{1}',[fstyle]='{2}' where [id] = '{3}'", fname, fsize, fstyle, user.uid);
                     int rowup = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlup);
                     if (rowup == 1)
                     {
@@ -170,6 +166,12 @@ namespace Warehouse_Manager
             }
             this.getfont();
             //MessageBox.Show(log1.Font.ToString());
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            test4 test4 = new test4();
+            test4.ShowDialog();
         }
     }
 }

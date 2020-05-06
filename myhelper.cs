@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Warehouse_Manager
 {
@@ -15,9 +11,9 @@ namespace Warehouse_Manager
         /// <returns>返还与输入产品名对应的产品ID</returns>
         public static int Getpidbyname(string name)//通过产品名，查询产品id
         {
-            string sql = string.Format("select [id] from [product] where [name] = '{0}'",name);
-            int pid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr,System.Data.CommandType.Text,sql));
-            return  pid;
+            string sql = string.Format("select [id] from [product] where [name] = '{0}'", name);
+            int pid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, System.Data.CommandType.Text, sql));
+            return pid;
         }
 
         /// <summary>
@@ -39,7 +35,7 @@ namespace Warehouse_Manager
         /// <returns>返还剩余库存（int）</returns>
         public static int Getstockbyid(int id)//通过id，查询剩余库存
         {
-            string sql = string.Format("select [stock] from [product] where [id] = '{0}'",id);
+            string sql = string.Format("select [stock] from [product] where [id] = '{0}'", id);
             int systock = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, System.Data.CommandType.Text, sql));
             return systock;
         }
@@ -50,9 +46,9 @@ namespace Warehouse_Manager
         /// <param name="newstock">处理后的库存</param>
         /// <param name="id">产品ID</param>
         /// <returns>返还“1”说明更新成功</returns>
-        public static int Upstock_delete(int newstock,int id)//更新对应产品信息，需要提供新库存和产品id两个参数，返还执行结果1
+        public static int Upstock_delete(int newstock, int id)//更新对应产品信息，需要提供新库存和产品id两个参数，返还执行结果1
         {
-            string sql = string.Format("update [product] set [stock] = '{0}' where [id] = '{1}' ",newstock,id);
+            string sql = string.Format("update [product] set [stock] = '{0}' where [id] = '{1}' ", newstock, id);
             int row = Convert.ToInt32(SqlHelper.ExecuteNonQuery(SqlHelper.constr, System.Data.CommandType.Text, sql));
             return row;
         }
@@ -63,10 +59,10 @@ namespace Warehouse_Manager
         /// <param name="id">产品id</param>
         /// <param name="addstock">需要出口的库存数（正加负减）</param>
         /// <returns>返还执行结果</returns>
-        public static int Upstock_sql(int id,int addstock)
+        public static int Upstock_sql(int id, int addstock)
         {
-            string sql = string.Format("update [product] set [stock] = [stock] + '{0}' where [id] = '{1}'",addstock,id);
-            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr,System.Data.CommandType.Text,sql);
+            string sql = string.Format("update [product] set [stock] = [stock] + '{0}' where [id] = '{1}'", addstock, id);
+            int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, System.Data.CommandType.Text, sql);
             return row;
         }
 
@@ -76,5 +72,5 @@ namespace Warehouse_Manager
             return time;
         }
     }
-    
+
 }

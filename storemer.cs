@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -78,7 +72,7 @@ namespace Warehouse_Manager
         {
             if (string.IsNullOrWhiteSpace(id.Text))
             {
-                
+
             }
             else
             {
@@ -89,7 +83,7 @@ namespace Warehouse_Manager
                 note.Text = info[3];
             }
         }
-        
+
 
         private void ids_TextChanged(object sender, EventArgs e)
         {
@@ -104,12 +98,12 @@ namespace Warehouse_Manager
                 dephone.Text = info[1];
                 deaddress.Text = info[2];
                 denote.Text = info[3];
-            }      
+            }
         }
 
         private void debut_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(ids.Text)==false)
+            if (string.IsNullOrWhiteSpace(ids.Text) == false)
             {
                 if (MessageBox.Show("确定删除该商家吗？", "在？", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
@@ -161,7 +155,7 @@ namespace Warehouse_Manager
         /// <summary>
         /// 清空各个控件的内容
         /// </summary>
-        public  void clear()
+        public void clear()
         {
             name.Text = null;
             phone.Text = null;

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Warehouse_Manager
@@ -22,7 +18,7 @@ namespace Warehouse_Manager
             this.mai = main;
         }
 
-        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)//重绘tab
         {
             string text = ((TabControl)sender).TabPages[e.Index].Text;
             SolidBrush brush = new SolidBrush(Color.Black);
@@ -72,9 +68,9 @@ namespace Warehouse_Manager
 
         private void setting_Load(object sender, EventArgs e)
         {
-            string sql = string.Format("select [bgmmode] from [setting] where [id] = '{0}'",user.uid);
-            int bgmmode = Convert.ToInt32( SqlHelper.ExecuteScalar(SqlHelper.constr,CommandType.Text,sql));
-            if(bgmmode == 1)
+            string sql = string.Format("select [bgmmode] from [setting] where [id] = '{0}'", user.uid);
+            int bgmmode = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sql));
+            if (bgmmode == 1)
             {
                 bgmtrue.Checked = true;
             }
@@ -83,13 +79,18 @@ namespace Warehouse_Manager
                 bgmfalse.Checked = true;
             }
 
-            if( bgmtrue.Checked == true)
+            if (bgmtrue.Checked == true)
             {
                 choosebgm.Visible = true;
             }
             string sqls = string.Format("select [warning] from [setting] where [id] = '{0}'", user.uid);
             int warning = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqls));
             wartime.Text = warning.ToString();
+            string sqlss = string.Format("select [bgmurl] from [setting] where [id] = '{0}'", user.uid);
+            bgmurl = SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlss).ToString();
+
+            runbut.Visible = false;
+            infolabel.Visible = false;
         }
 
         private void choosebgm_Click(object sender, EventArgs e)
@@ -102,7 +103,6 @@ namespace Warehouse_Manager
             //main mai = (main)this.Owner;
             mai.SetPlayerUrl(openFileDialog1.FileName);
             bgmurl = openFileDialog1.FileName;
-            
         }
 
         private void bgmtrue_CheckedChanged(object sender, EventArgs e)
@@ -115,6 +115,28 @@ namespace Warehouse_Manager
             {
                 choosebgm.Visible = false;
             }
+        }
+
+        private void label5_DoubleClick(object sender, EventArgs e)
+        {
+            runbut.Visible = true;
+            infolabel.Visible = true;
+        }
+
+        private void runbut_Click(object sender, EventArgs e)
+        {
+            string[] vs = new string[5] { "in", "out", "sup", "product", "store" };
+            foreach (string i in vs)
+            {
+                string sql = string.Format("delete from [{0}]",i);
+                SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
+            }
+            MessageBox.Show("删除成功");
+            main mai = (main)this.Owner;
+            mai.prore();
+            mai.inre();
+            mai.outre();
+            mai.spre();
         }
     }
 }
