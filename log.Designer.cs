@@ -39,6 +39,7 @@
             this.inlog = new System.Windows.Forms.TabPage();
             this.clears = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.change = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -58,7 +59,6 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.inlog.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -143,7 +143,7 @@
             this.inlog.Location = new System.Drawing.Point(4, 22);
             this.inlog.Name = "inlog";
             this.inlog.Padding = new System.Windows.Forms.Padding(3);
-            this.inlog.Size = new System.Drawing.Size(586, 276);
+            this.inlog.Size = new System.Drawing.Size(594, 276);
             this.inlog.TabIndex = 0;
             this.inlog.Text = "提交日志";
             this.inlog.UseVisualStyleBackColor = true;
@@ -172,6 +172,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "查看/修改日志";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(302, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(22, 22);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "?";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // change
             // 
@@ -337,7 +347,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(545, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(553, 17);
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = " ";
             // 
@@ -349,16 +359,6 @@
             // timer2
             // 
             this.timer2.Interval = 1000;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(302, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(22, 22);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "?";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // log
             // 

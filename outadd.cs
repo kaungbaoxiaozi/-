@@ -44,24 +44,24 @@ namespace Warehouse_Manager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
-                int numbert = Convert.ToInt32(number.Text);
-                string pnamet = pnamecom.Text;
-                string snamet = snamecom.Text;
-                string time = DateTime.Now.ToLongDateString().ToString();
-                string uid = user.uid;
-                string pid;
-                int sid;
-                //通过产品名称，查询产品id用于后面的库存是否充足判断
-                string sqlca = string.Format("select [id] from [product] where [name] = '{0}' ", pnamet);
-                pid = SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlca).ToString();
-                //查询店家id
-                string sqlcas = string.Format("select [id] from [store] where [name] = '{0}'", snamet);
-                sid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlcas));
-                //获取出库产品的剩余库存
-                string sqlstock = string.Format("select [stock] from [product] where [id] = '{0}'", pid);
-                int systock = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlstock));
+
+
+            int numbert = Convert.ToInt32(number.Text);
+            string pnamet = pnamecom.Text;
+            string snamet = snamecom.Text;
+            string time = DateTime.Now.ToLongDateString().ToString();
+            string uid = user.uid;
+            string pid;
+            int sid;
+            //通过产品名称，查询产品id用于后面的库存是否充足判断
+            string sqlca = string.Format("select [id] from [product] where [name] = '{0}' ", pnamet);
+            pid = SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlca).ToString();
+            //查询店家id
+            string sqlcas = string.Format("select [id] from [store] where [name] = '{0}'", snamet);
+            sid = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlcas));
+            //获取出库产品的剩余库存
+            string sqlstock = string.Format("select [stock] from [product] where [id] = '{0}'", pid);
+            int systock = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlstock));
             //判断出库数量是否大于剩余库存
             if (numbert != 0 & string.IsNullOrWhiteSpace(pnamet) == false & string.IsNullOrWhiteSpace(snamet) == false)
             {
@@ -99,10 +99,10 @@ namespace Warehouse_Manager
                 }
             }
             else
-            { 
+            {
                 MessageBox.Show("出库失败，请检查：\n1：出库数量是否为'0'\n2：终端名称与产品名称是否正确填写");
             }
-            
+
         }
 
         private void addout_FormClosed(object sender, FormClosedEventArgs e)

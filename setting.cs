@@ -44,20 +44,22 @@ namespace Warehouse_Manager
             SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlca);
             if (reader.HasRows)
             {
-                string sqls = string.Format("update [setting] set [warning] = '{0}',[bgmmode] = '{1}',[bgmurl] = '{2}' where [id] = '{3}'", wartime.Text, bgmmode, bgmurl, user.uid);
+                string sqls = string.Format("update [setting] set [warning] = '{0}',[bgmmode] = '{1}',[bgmurl] = '{2}',[volume] = '{3}' where [id] = '{4}'", wartime.Text, bgmmode, bgmurl, volume.Text, user.uid);
                 string rows = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqls).ToString();
                 if (rows == "1")
                 {
                     MessageBox.Show("保存成功");
+                    user.volume = Convert.ToInt32(volume.Text);
                 }
             }
             else
             {
-                string sql = string.Format("insert into [setting] values ('{0}','{1}','{2}','{3}')", user.uid, wartime.Text, bgmmode, bgmurl);
+                string sql = string.Format("insert into [setting] values ('{0}','{1}','{2}','{3}','{4}')", user.uid, wartime.Text, bgmmode, bgmurl, volume.Text);
                 string row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql).ToString();
                 if (row == "1")
                 {
                     MessageBox.Show("设置成功");
+                    user.volume = Convert.ToInt32(volume.Text);
                 }
             }
             if (bgmmode == 0)
@@ -88,6 +90,10 @@ namespace Warehouse_Manager
             wartime.Text = warning.ToString();
             string sqlss = string.Format("select [bgmurl] from [setting] where [id] = '{0}'", user.uid);
             bgmurl = SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlss).ToString();
+
+            string sqlvolme = string.Format("select [volume] from [setting] where [id] = '{0}'", user.uid);
+            volumetrackBar.Value = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlvolme));
+            volume.Text = volumetrackBar.Value.ToString();
 
             runbut.Visible = false;
             infolabel.Visible = false;
@@ -128,8 +134,8 @@ namespace Warehouse_Manager
             string[] vs = new string[5] { "in", "out", "sup", "product", "store" };
             foreach (string i in vs)
             {
-                string sql = string.Format("delete from [{0}]",i);
-                SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sql);
+                string sql = string.Format("delete from [{0}]", i);
+                SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
             }
             MessageBox.Show("删除成功");
             main mai = (main)this.Owner;
@@ -137,6 +143,11 @@ namespace Warehouse_Manager
             mai.inre();
             mai.outre();
             mai.spre();
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            volume.Text = volumetrackBar.Value.ToString();
         }
     }
 }

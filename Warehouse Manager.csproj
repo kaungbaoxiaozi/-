@@ -128,6 +128,12 @@
     <Compile Include="spadd.Designer.cs">
       <DependentUpon>spadd.cs</DependentUpon>
     </Compile>
+    <Compile Include="speechtest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="speechtest.Designer.cs">
+      <DependentUpon>speechtest.cs</DependentUpon>
+    </Compile>
     <Compile Include="spmer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     <EmbeddedResource Include="spadd.resx">
       <DependentUpon>spadd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="speechtest.resx">
+      <DependentUpon>speechtest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="spmer.resx">
       <DependentUpon>spmer.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +378,15 @@
       <Lcid>0</Lcid>
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="SpeechLib">
+      <Guid>{C866CA3A-32F7-11D2-9602-00C04F8EE628}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>

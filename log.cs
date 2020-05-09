@@ -15,7 +15,7 @@ namespace Warehouse_Manager
 
         private void about_Load(object sender, EventArgs e)
         {
-           
+
             this.getfont();
             time.Text = DateTime.Now.ToLongDateString().ToString();
             string nowtime = DateTime.Now.ToLongDateString().ToString();

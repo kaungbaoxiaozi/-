@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpeechLib;
+using System;
 
 namespace Warehouse_Manager
 {
@@ -70,6 +71,16 @@ namespace Warehouse_Manager
         {
             string time = DateTime.Now.ToLongDateString();
             return time;
+        }
+
+        public static void Speak(string text)
+        {
+
+            SpVoiceClass voice = new SpVoiceClass();
+            voice.Volume = user.volume;
+            voice.Voice = voice.GetVoices(string.Empty, string.Empty).Item(0);
+            voice.Speak(text, SpeechVoiceSpeakFlags.SVSFDefault);
+
         }
     }
 

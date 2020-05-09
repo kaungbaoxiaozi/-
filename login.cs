@@ -40,6 +40,7 @@ namespace Warehouse_Manager
                     }
                 }
             }
+            backspeak.RunWorkerAsync();
         }
 
         private void sqltest_Click(object sender, EventArgs e)
@@ -59,6 +60,8 @@ namespace Warehouse_Manager
                 {
                     user.uid = idt;
                     user.upwd = pwdt;
+                    string sqlvolme = string.Format("select [volume] from [setting] where [id] = '{0}'", idt);
+                    user.volume = Convert.ToInt32(SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlvolme));
                     //获取用户姓名
                     string sqlname = string.Format("select rtrim([name]) from [user] where id = '{0}' ", idt);
                     user.uname = SqlHelper.ExecuteScalar(SqlHelper.constr, CommandType.Text, sqlname).ToString();
@@ -78,6 +81,8 @@ namespace Warehouse_Manager
                     this.Hide();
                     main main = new main();
                     main.Show();
+                    //Myhelper.Speak("欢迎使用仓库管理系统");
+                    backlogin.RunWorkerAsync();
                 }
                 else
                 {
@@ -102,6 +107,14 @@ namespace Warehouse_Manager
             Application.Exit();
         }
 
+        private void backspeak_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            Myhelper.Speak(hi.Text + "，请问你是谁？");
+        }
 
+        private void backlogin_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            Myhelper.Speak(user.uname + "！欢迎使用仓库管理系统！");
+        }
     }
 }

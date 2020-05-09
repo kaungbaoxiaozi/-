@@ -238,20 +238,20 @@ namespace Warehouse_Manager
             {
                 warinfo.Text = "注意:目前有" + row.ToString() + "件商品缺货";
             }
-            string sqlwaring = string.Format("select [name] from [product] where [stock] <= '{0}'",warning);
-            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr,CommandType.Text,sqlwaring);
+            string sqlwaring = string.Format("select [name] from [product] where [stock] <= '{0}'", warning);
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sqlwaring);
             string[] vs = new string[row];
             //while(reader.Read())
             //{
-                for (int i = 0;i<vs.Length;i++)
-                {
+            for (int i = 0; i < vs.Length; i++)
+            {
                 if (reader.Read())
                 {
                     vs[i] = reader["name"].ToString();
                 }
-                    
-                }
-           // }
+
+            }
+            // }
             user.warings = vs;
         }
 
@@ -489,18 +489,18 @@ namespace Warehouse_Manager
 
         private void warinfo_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(warinfo.Text)==false)
+            if (string.IsNullOrWhiteSpace(warinfo.Text) == false)
             {
                 string info = "当前缺货产品：";
                 foreach (string i in user.warings)
                 {
-                    info = info + " || "+ i+" || ";
+                    info = info + " || " + i + " || ";
                 }
                 MessageBox.Show(info);
             }
             else
             {
-              
+
             }
         }
 

@@ -39,6 +39,8 @@
             this.exitbut = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.hi = new System.Windows.Forms.Label();
+            this.backspeak = new System.ComponentModel.BackgroundWorker();
+            this.backlogin = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // loginbut
@@ -97,6 +99,14 @@
             resources.ApplyResources(this.hi, "hi");
             this.hi.Name = "hi";
             // 
+            // backspeak
+            // 
+            this.backspeak.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backspeak_DoWork);
+            // 
+            // backlogin
+            // 
+            this.backlogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backlogin_DoWork);
+            // 
             // login
             // 
             this.AcceptButton = this.loginbut;
@@ -136,6 +146,8 @@
         private System.Windows.Forms.Button exitbut;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label hi;
+        private System.ComponentModel.BackgroundWorker backspeak;
+        private System.ComponentModel.BackgroundWorker backlogin;
     }
 }
 

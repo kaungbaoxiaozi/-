@@ -40,13 +40,17 @@
             this.wartime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.infolabel = new System.Windows.Forms.Label();
+            this.runbut = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.runbut = new System.Windows.Forms.Button();
-            this.infolabel = new System.Windows.Forms.Label();
+            this.volumetrackBar = new System.Windows.Forms.TrackBar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.volume = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.volumetrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -68,6 +72,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.volume);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.volumetrackBar);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.choosebgm);
             this.tabPage1.Controls.Add(this.bgmfalse);
@@ -189,6 +196,27 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // infolabel
+            // 
+            this.infolabel.AutoSize = true;
+            this.infolabel.Location = new System.Drawing.Point(106, 99);
+            this.infolabel.Name = "infolabel";
+            this.infolabel.Size = new System.Drawing.Size(246, 17);
+            this.infolabel.TabIndex = 2;
+            this.infolabel.Text = "*删除出库，入库，终端，产品表的所有记录*";
+            this.infolabel.Visible = false;
+            // 
+            // runbut
+            // 
+            this.runbut.Location = new System.Drawing.Point(109, 73);
+            this.runbut.Name = "runbut";
+            this.runbut.Size = new System.Drawing.Size(75, 23);
+            this.runbut.TabIndex = 1;
+            this.runbut.Text = "删库跑路";
+            this.runbut.UseVisualStyleBackColor = true;
+            this.runbut.Visible = false;
+            this.runbut.Click += new System.EventHandler(this.runbut_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -204,26 +232,35 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // runbut
+            // volumetrackBar
             // 
-            this.runbut.Location = new System.Drawing.Point(109, 73);
-            this.runbut.Name = "runbut";
-            this.runbut.Size = new System.Drawing.Size(75, 23);
-            this.runbut.TabIndex = 1;
-            this.runbut.Text = "删库跑路";
-            this.runbut.UseVisualStyleBackColor = true;
-            this.runbut.Visible = false;
-            this.runbut.Click += new System.EventHandler(this.runbut_Click);
+            this.volumetrackBar.BackColor = System.Drawing.SystemColors.Window;
+            this.volumetrackBar.Location = new System.Drawing.Point(14, 186);
+            this.volumetrackBar.Maximum = 100;
+            this.volumetrackBar.Name = "volumetrackBar";
+            this.volumetrackBar.Size = new System.Drawing.Size(163, 45);
+            this.volumetrackBar.TabIndex = 11;
+            this.volumetrackBar.TickFrequency = 15;
+            this.volumetrackBar.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.volumetrackBar.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
-            // infolabel
+            // label6
             // 
-            this.infolabel.AutoSize = true;
-            this.infolabel.Location = new System.Drawing.Point(106, 99);
-            this.infolabel.Name = "infolabel";
-            this.infolabel.Size = new System.Drawing.Size(246, 17);
-            this.infolabel.TabIndex = 2;
-            this.infolabel.Text = "*删除出库，入库，终端，产品表的所有记录*";
-            this.infolabel.Visible = false;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 166);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "TTS声音大小：";
+            // 
+            // volume
+            // 
+            this.volume.AutoSize = true;
+            this.volume.Location = new System.Drawing.Point(184, 199);
+            this.volume.Name = "volume";
+            this.volume.Size = new System.Drawing.Size(15, 17);
+            this.volume.TabIndex = 13;
+            this.volume.Text = "0";
             // 
             // setting
             // 
@@ -245,6 +282,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.volumetrackBar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,5 +305,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button runbut;
         private System.Windows.Forms.Label infolabel;
+        private System.Windows.Forms.Label volume;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TrackBar volumetrackBar;
     }
 }
