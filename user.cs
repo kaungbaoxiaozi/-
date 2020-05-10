@@ -8,8 +8,6 @@
         public static string uname;
         public static int uwarning;
         public static string[] warings;
-        public static int volume;
-        //public static int outnumber = 0;
-        //public static int 
+        public static int volume = 100;
     }
 }

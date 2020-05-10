@@ -41,6 +41,20 @@ namespace Warehouse_Manager
                 }
             }
             backspeak.RunWorkerAsync();
+
+            string sql = "SELECT TOP 1 * FROM [user] order by [lasttime] desc;";//查询已登录用户账号信息
+            SqlDataReader reader = SqlHelper.ExecuteReader(SqlHelper.constr, CommandType.Text, sql);
+            if (reader.Read())
+            {
+                int isrem = (int)reader["rember"];
+                if (isrem == 1)
+                {
+                    pwd.Text = reader["password"].ToString();
+                    id.Text = reader["id"].ToString();
+                    rember.Checked = true;
+                } 
+            }
+
         }
 
         private void sqltest_Click(object sender, EventArgs e)
@@ -83,6 +97,16 @@ namespace Warehouse_Manager
                     main.Show();
                     //Myhelper.Speak("欢迎使用仓库管理系统");
                     backlogin.RunWorkerAsync();
+                    if (rember.Checked == true)
+                    {
+                        string sqlre = string.Format("update [user] set [rember] = '{0}' where [id] = '{1}' ",1,idt);
+                        SqlHelper.ExecuteNonQuery(SqlHelper.constr,CommandType.Text,sqlre);
+                    }
+                    else
+                    {
+                        string sqlre = string.Format("update [user] set [rember] = '{0}' where [id] = '{1}' ", 0, idt);
+                        SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sqlre);
+                    }
                 }
                 else
                 {
@@ -115,6 +139,12 @@ namespace Warehouse_Manager
         private void backlogin_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             Myhelper.Speak(user.uname + "！欢迎使用仓库管理系统！");
+        }
+
+        private void id_Enter(object sender, EventArgs e)
+        {
+            id.Text = null;
+            pwd.Text = null;
         }
     }
 }

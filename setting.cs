@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
+using SpeechLib;
 
 namespace Warehouse_Manager
 {
@@ -131,6 +132,7 @@ namespace Warehouse_Manager
 
         private void runbut_Click(object sender, EventArgs e)
         {
+            backwarning.RunWorkerAsync();
             string[] vs = new string[5] { "in", "out", "sup", "product", "store" };
             foreach (string i in vs)
             {
@@ -148,6 +150,11 @@ namespace Warehouse_Manager
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             volume.Text = volumetrackBar.Value.ToString();
+        }
+
+        private void backwarning_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Myhelper.Speak("你真的要那么做吗？");
         }
     }
 }

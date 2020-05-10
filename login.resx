@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;loginbut.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="id.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 80</value>
@@ -151,9 +151,6 @@
   </data>
   <data name="id.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
-  </data>
-  <data name="id.Text" xml:space="preserve">
-    <value>1001</value>
   </data>
   <data name="&gt;&gt;id.Name" xml:space="preserve">
     <value>id</value>
@@ -165,7 +162,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;id.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="pwd.Location" type="System.Drawing.Point, System.Drawing">
     <value>172, 133</value>
@@ -179,9 +176,6 @@
   <data name="pwd.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="pwd.Text" xml:space="preserve">
-    <value>111</value>
-  </data>
   <data name="&gt;&gt;pwd.Name" xml:space="preserve">
     <value>pwd</value>
   </data>
@@ -192,7 +186,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pwd.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -219,7 +213,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -246,7 +240,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -273,7 +267,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -300,7 +294,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="exitbut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -328,7 +322,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;exitbut.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -358,7 +352,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="hi.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -382,7 +376,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;hi.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="backspeak.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -390,6 +384,36 @@
   <metadata name="backlogin.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>130, 17</value>
   </metadata>
+  <data name="rember.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="rember.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rember.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 209</value>
+  </data>
+  <data name="rember.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 21</value>
+  </data>
+  <data name="rember.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="rember.Text" xml:space="preserve">
+    <value>rember</value>
+  </data>
+  <data name="&gt;&gt;rember.Name" xml:space="preserve">
+    <value>rember</value>
+  </data>
+  <data name="&gt;&gt;rember.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rember.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rember.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

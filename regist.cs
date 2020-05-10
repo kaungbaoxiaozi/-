@@ -13,6 +13,7 @@ namespace Warehouse_Manager
 
         private void reloginbut_Click(object sender, EventArgs e)
         {
+            
             if (pwd.Text == "" || pwds.Text == "")
             {
                 MessageBox.Show("请输入密码");
@@ -44,6 +45,16 @@ namespace Warehouse_Manager
                     MessageBox.Show("两次密码输入不一致");
                 }
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            Myhelper.Speak("现在你又想成为谁呢？");
+        }
+
+        private void regist_Load(object sender, EventArgs e)
+        {
+            backgroundWorker1.RunWorkerAsync();
         }
     }
 }

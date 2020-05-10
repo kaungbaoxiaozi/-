@@ -72,15 +72,16 @@ namespace Warehouse_Manager
             string time = DateTime.Now.ToLongDateString();
             return time;
         }
-
+        /// <summary>
+        /// TTS文字转语音，传入需要转换的文本
+        /// </summary>
+        /// <param name="text">需要转语音的文本</param>
         public static void Speak(string text)
         {
-
             SpVoiceClass voice = new SpVoiceClass();
             voice.Volume = user.volume;
             voice.Voice = voice.GetVoices(string.Empty, string.Empty).Item(0);
             voice.Speak(text, SpeechVoiceSpeakFlags.SVSFDefault);
-
         }
     }
 

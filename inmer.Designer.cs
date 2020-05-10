@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.numbert = new System.Windows.Forms.NumericUpDown();
             this.notet = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.spnamet = new System.Windows.Forms.ComboBox();
             this.supBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wMSDataSet = new Warehouse_Manager.WMSDataSet();
             this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,15 +69,15 @@
             this.inBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.inTableAdapter();
             this.supTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.supTableAdapter();
-            this.numbert = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numbert)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,7 +88,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(242, 450);
+            this.tabControl1.Size = new System.Drawing.Size(242, 473);
             this.tabControl1.TabIndex = 7;
             // 
             // tabPage1
@@ -108,10 +108,17 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(234, 424);
+            this.tabPage1.Size = new System.Drawing.Size(234, 447);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "修改入库记录";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // numbert
+            // 
+            this.numbert.Location = new System.Drawing.Point(65, 42);
+            this.numbert.Name = "numbert";
+            this.numbert.Size = new System.Drawing.Size(151, 21);
+            this.numbert.TabIndex = 14;
             // 
             // notet
             // 
@@ -160,15 +167,6 @@
             this.label12.Size = new System.Drawing.Size(53, 12);
             this.label12.TabIndex = 10;
             this.label12.Text = "供应商：";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(10, 407);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(221, 12);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "*暂不提供更改出库产品功能，开发中...";
             // 
             // label5
             // 
@@ -245,7 +243,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(234, 424);
+            this.tabPage2.Size = new System.Drawing.Size(234, 447);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "删除入库记录";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -376,7 +374,7 @@
             this.indata.Name = "indata";
             this.indata.ReadOnly = true;
             this.indata.RowTemplate.Height = 23;
-            this.indata.Size = new System.Drawing.Size(843, 450);
+            this.indata.Size = new System.Drawing.Size(843, 473);
             this.indata.TabIndex = 8;
             this.indata.Click += new System.EventHandler(this.dataGridView1_Click);
             // 
@@ -449,34 +447,37 @@
             // 
             this.supTableAdapter.ClearBeforeFill = true;
             // 
-            // numbert
+            // label11
             // 
-            this.numbert.Location = new System.Drawing.Point(65, 42);
-            this.numbert.Name = "numbert";
-            this.numbert.Size = new System.Drawing.Size(151, 21);
-            this.numbert.TabIndex = 14;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(10, 407);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(221, 12);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "*暂不提供更改出库产品功能，开发中...";
             // 
             // inmer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 450);
+            this.ClientSize = new System.Drawing.Size(1085, 473);
             this.Controls.Add(this.indata);
             this.Controls.Add(this.tabControl1);
             this.Name = "inmer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "管理入库记录";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.inmer_FormClosed);
             this.Load += new System.EventHandler(this.inmer_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numbert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.supBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.indata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numbert)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,7 +486,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
@@ -524,5 +524,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label ids;
         private System.Windows.Forms.NumericUpDown numbert;
+        private System.Windows.Forms.Label label11;
     }
 }

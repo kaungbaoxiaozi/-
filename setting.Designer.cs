@@ -47,6 +47,7 @@
             this.volumetrackBar = new System.Windows.Forms.TrackBar();
             this.label6 = new System.Windows.Forms.Label();
             this.volume = new System.Windows.Forms.Label();
+            this.backwarning = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -262,6 +263,10 @@
             this.volume.TabIndex = 13;
             this.volume.Text = "0";
             // 
+            // backwarning
+            // 
+            this.backwarning.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backwarning_DoWork);
+            // 
             // setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -308,5 +313,6 @@
         private System.Windows.Forms.Label volume;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TrackBar volumetrackBar;
+        private System.ComponentModel.BackgroundWorker backwarning;
     }
 }

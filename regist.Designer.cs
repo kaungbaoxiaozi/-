@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // pwd
@@ -105,6 +106,10 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "姓名：";
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // regist
             // 
             this.AcceptButton = this.registbut;
@@ -125,6 +130,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注册";
+            this.Load += new System.EventHandler(this.regist_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +145,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

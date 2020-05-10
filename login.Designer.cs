@@ -41,6 +41,7 @@
             this.hi = new System.Windows.Forms.Label();
             this.backspeak = new System.ComponentModel.BackgroundWorker();
             this.backlogin = new System.ComponentModel.BackgroundWorker();
+            this.rember = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // loginbut
@@ -54,6 +55,7 @@
             // 
             resources.ApplyResources(this.id, "id");
             this.id.Name = "id";
+            this.id.Enter += new System.EventHandler(this.id_Enter);
             // 
             // pwd
             // 
@@ -107,11 +109,18 @@
             // 
             this.backlogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backlogin_DoWork);
             // 
+            // rember
+            // 
+            resources.ApplyResources(this.rember, "rember");
+            this.rember.Name = "rember";
+            this.rember.UseVisualStyleBackColor = true;
+            // 
             // login
             // 
             this.AcceptButton = this.loginbut;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.rember);
             this.Controls.Add(this.hi);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.exitbut);
@@ -148,6 +157,7 @@
         private System.Windows.Forms.Label hi;
         private System.ComponentModel.BackgroundWorker backspeak;
         private System.ComponentModel.BackgroundWorker backlogin;
+        private System.Windows.Forms.CheckBox rember;
     }
 }
 

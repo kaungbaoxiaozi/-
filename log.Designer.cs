@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.log1 = new System.Windows.Forms.RichTextBox();
@@ -57,8 +56,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.time = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.inlog.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -351,15 +348,6 @@
             this.toolStripStatusLabel1.Spring = true;
             this.toolStripStatusLabel1.Text = " ";
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
-            // 
             // log
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -417,8 +405,6 @@
         private System.Windows.Forms.RadioButton m1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Button button2;
     }
 }

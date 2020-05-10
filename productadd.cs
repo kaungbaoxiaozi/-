@@ -21,7 +21,16 @@ namespace Warehouse_Manager
 
         private void add_Click(object sender, EventArgs e)
         {
-            string nameformat = string.Format("{0}({1})", name.Text, format.Text);
+            string nameformat;
+            if (string.IsNullOrWhiteSpace(format.Text) == true)
+            {
+                nameformat = string.Format("{0}", name.Text);
+            }
+            else
+            {
+                nameformat = string.Format("{0}({1})", name.Text, format.Text);
+            }
+            
             string sql = string.Format("insert into [product] ([name],[format],[onlyname]) values('{0}','{1}','{2}')", nameformat, format.Text, name.Text);
             int row = SqlHelper.ExecuteNonQuery(SqlHelper.constr, CommandType.Text, sql);
             if (row == 1)

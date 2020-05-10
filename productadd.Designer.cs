@@ -34,16 +34,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.wMSDataSet = new Warehouse_Manager.WMSDataSet();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wMSDataSet = new Warehouse_Manager.WMSDataSet();
             this.productTableAdapter = new Warehouse_Manager.WMSDataSetTableAdapters.productTableAdapter();
             this.label2 = new System.Windows.Forms.Label();
             this.format = new System.Windows.Forms.TextBox();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // name
@@ -58,7 +58,7 @@
             this.add.Location = new System.Drawing.Point(72, 103);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(75, 23);
-            this.add.TabIndex = 2;
+            this.add.TabIndex = 3;
             this.add.Text = "添加";
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
@@ -100,15 +100,29 @@
             this.dataGridView1.Size = new System.Drawing.Size(243, 167);
             this.dataGridView1.TabIndex = 6;
             // 
-            // wMSDataSet
+            // idDataGridViewTextBoxColumn
             // 
-            this.wMSDataSet.DataSetName = "WMSDataSet";
-            this.wMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "编号";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "名称";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataMember = "product";
             this.productBindingSource.DataSource = this.wMSDataSet;
+            // 
+            // wMSDataSet
+            // 
+            this.wMSDataSet.DataSetName = "WMSDataSet";
+            this.wMSDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // productTableAdapter
             // 
@@ -128,21 +142,7 @@
             this.format.Location = new System.Drawing.Point(72, 65);
             this.format.Name = "format";
             this.format.Size = new System.Drawing.Size(114, 21);
-            this.format.TabIndex = 8;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "编号";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "名称";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.format.TabIndex = 1;
             // 
             // productadd
             // 
@@ -167,8 +167,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.productadd_FormClosed);
             this.Load += new System.EventHandler(this.productadd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wMSDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
