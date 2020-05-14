@@ -114,6 +114,7 @@
             resources.ApplyResources(this.rember, "rember");
             this.rember.Name = "rember";
             this.rember.UseVisualStyleBackColor = true;
+            this.rember.CheckedChanged += new System.EventHandler(this.rember_CheckedChanged);
             // 
             // login
             // 

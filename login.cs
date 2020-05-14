@@ -145,6 +145,12 @@ namespace Warehouse_Manager
         {
             id.Text = null;
             pwd.Text = null;
+            rember.Checked = false;
+        }
+
+        private void getLogin()
+        {
+
         }
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace Warehouse_Manager
 {
-    public static class Myhelper
+    public static class Myhelper//本类都是静态方法，可直接引用，无需实例化
     {
         /// <summary>
         /// 通过产品名，查询产品ID
